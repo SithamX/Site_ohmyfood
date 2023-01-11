@@ -1,9 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"); /* font-family: 'Shrikhand', cursive; */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap"); /* font-family: 'Roboto', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"); /* font-family: 'Roboto', sans-serif; */
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+}
+
+h1 {
+  font-size: 1.5em; /* même taille que celle de base*/
 }
 
 h3 {
@@ -12,7 +16,7 @@ h3 {
 }
 
 p {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 header {
@@ -31,8 +35,8 @@ header img {
 
 #localisation {
   height: 50px;
-  background-color: #f2f2f2;
-  border-top: 1px solid #737373 #f2f2f2;
+  background-color: #e6e6e6;
+  /*border-top: 1px solid #737373 #f2f2f2;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,18 +49,78 @@ header img {
   color: #262626;
 }
 
-#section_une h3 {
+#section_une {
+  text-align: center;
+  padding-bottom: 50px;
+  background-color: #f2f2f2;
+}
+#section_une h1 {
   margin: auto; /* pour centrer le texte */
-  display: flex;
-  width: 60%;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
+  margin-top: 40px;
+  width: 70%;
+  padding-bottom: 15px;
 }
 #section_une p {
   margin: auto; /* pour centrer le texte */
   display: flex;
-  width: 75%;
-  font-weight: 700;
+  width: 85%;
   justify-content: center;
+}
+
+#bouton_explorer {
+  margin: auto;
+  margin-top: 30px;
+  width: 230px;
+  height: 50px;
+  background-color: violet;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+#bouton_explorer p {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+#section_deux {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#section_deux h2 {
+  margin-left: 20px;
+}
+#section_deux .chiffre_bouton_fonctionnement {
+  margin-left: -10px;
+  background-color: violet;
+  padding: 2px 7px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+#section_deux .bouton_fonctionnement {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  width: 90%;
+  border-radius: 20px;
+  height: 65px;
+}
+#section_deux i {
+  color: #737373;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+#section_trois {
+  background-color: #f2f2f2;
+  height: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */

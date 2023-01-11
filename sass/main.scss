@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap'); /* font-family: 'Shrikhand', cursive; */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap'); /* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* font-family: 'Roboto', sans-serif; */
 
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+}
+
+h1 {
+    font-size: 1.5em; /* même taille que celle de base*/
 }
   
 
@@ -15,10 +19,12 @@ h3 {
 }
 
 p {
-    font-weight: 100;
+    font-weight: 300;
 }
 
-$couleur_grise: #f2f2f2;
+$couleur_gris_fonce: #e6e6e6;
+$couleur_gris_clair: #f2f2f2;
+$couleur_gris_logo: #737373;
 
 @mixin texte_gras {
     font-weight: 400;
@@ -40,8 +46,8 @@ header {
 
 #localisation {
     height: 50px;
-    background-color: $couleur_grise;
-    border-top: 1px solid #737373 #f2f2f2;
+    background-color: $couleur_gris_fonce;
+    /*border-top: 1px solid #737373 #f2f2f2;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,17 +61,78 @@ header {
 }
 
 #section_une {
-    h3 {
+    text-align: center;
+    padding-bottom: 50px;
+    background-color: $couleur_gris_clair;
+    h1 {
         margin: auto; /* pour centrer le texte */
-        display: flex;
-        width: 60%;
-        justify-content: center;
+        /*display: flex;
+        justify-content: center;*/
+        margin-top: 40px;
+        width: 70%;
+        padding-bottom: 15px;
     }
     p {
         margin: auto; /* pour centrer le texte */
         display: flex;
-        width: 75%;
-        font-weight: 700;
+        width: 85%;
         justify-content: center;
     }
+}
+
+#bouton_explorer {
+    margin: auto;
+    margin-top: 30px;
+    width: 230px;
+    height: 50px;
+    background-color: violet;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    p {
+        color: #ffffff;
+        font-weight: 500;
+    }
+}
+
+
+#section_deux {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    h2 {
+        margin-left: 20px;
+    }
+    .chiffre_bouton_fonctionnement {
+        margin-left: -10px;
+        background-color: violet;
+        padding: 2px 7px;
+        border-radius: 50px;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+    .bouton_fonctionnement {
+        display: flex;
+        align-items: center;
+        background-color: $couleur_gris_clair;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+        width: 90%;
+        border-radius: 20px;
+        height: 65px;
+    }
+    & i
+    {
+        color: $couleur_gris_logo;
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+}
+
+
+#section_trois {
+    background-color: $couleur_gris_clair;
+    height: 300px;
 }
