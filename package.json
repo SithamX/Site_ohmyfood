@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SithamX/Site_ohmyfood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SithamX/Site_ohmyfood/issues"
+  },
+  "homepage": "https://github.com/SithamX/Site_ohmyfood#readme"
+}
