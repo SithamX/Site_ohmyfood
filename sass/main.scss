@@ -24,7 +24,9 @@ p {
 
 $couleur_gris_fonce: #e6e6e6;
 $couleur_gris_clair: #f2f2f2;
+$couleur_gris_footer: #1a1a1a;
 $couleur_gris_logo: #737373;
+
 
 @mixin texte_gras {
     font-weight: 400;
@@ -102,9 +104,10 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 50px;
     h2 {
         margin-left: 20px;
-    }
+    }               
     .chiffre_bouton_fonctionnement {
         margin-left: -10px;
         background-color: violet;
@@ -134,5 +137,55 @@ header {
 
 #section_trois {
     background-color: $couleur_gris_clair;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.card_acceuil {
+    background-color: #ffffff;
+    width: 80%;
+    height: 210px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    .card_acceuil_informations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    h3 {
+        color: black;
+        margin: 5px 10px;
+    }
+    p {
+        color: black;
+        margin: 5px 10px;
+    }
+    i {
+        color: #000000;
+        margin-right: 20px;
+        font-size: 1.5em;
+    }
+}
+
+footer {
+    background-color: $couleur_gris_footer;
+    color: white;
+    padding-left: 20px;
+    
+    h3 {
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.2em;
+        margin-top: 0px;
+        padding-top: 10px;
+    }
 }

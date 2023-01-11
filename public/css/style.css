@@ -90,6 +90,7 @@ header img {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 50px;
 }
 #section_deux h2 {
   margin-left: 20px;
@@ -120,7 +121,56 @@ header img {
 
 #section_trois {
   background-color: #f2f2f2;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.card_acceuil {
+  background-color: #ffffff;
+  width: 80%;
+  height: 210px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.card_acceuil img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.card_acceuil .card_acceuil_informations {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_acceuil h3 {
+  color: black;
+  margin: 5px 10px;
+}
+.card_acceuil p {
+  color: black;
+  margin: 5px 10px;
+}
+.card_acceuil i {
+  color: #000000;
+  margin-right: 20px;
+  font-size: 1.5em;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding-left: 20px;
+}
+footer h3 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.2em;
+  margin-top: 0px;
+  padding-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
