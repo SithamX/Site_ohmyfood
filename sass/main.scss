@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap'); /* font-family: 'Shrikhand', cursive; */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* font-family: 'Roboto', sans-serif; */
-
+@import "./polices.scss";
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -23,9 +20,13 @@ p {
 }
 
 $couleur_gris_fonce: #e6e6e6;
-$couleur_gris_clair: #f2f2f2;
+$couleur_gris_clair: #f7f7f7;
 $couleur_gris_footer: #1a1a1a;
 $couleur_gris_logo: #737373;
+$couleur_primaire: #9356DC;
+$couleur_secondaire: #FF79DA;
+$couleur_tertiaire: #99E2D0;
+
 
 
 @mixin texte_gras {
@@ -53,8 +54,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: linear-gradient;
     i {
-        margin-right: 15px;
+        margin-right: 10px;
         color:  #262626;
     }
     input[type="search"]
@@ -89,11 +91,12 @@ header {
 }
 
 #bouton_explorer {
+    text-decoration: none;
     margin: auto;
     margin-top: 30px;
     width: 230px;
     height: 50px;
-    background-color: violet;
+    background: linear-gradient($couleur_secondaire, $couleur_primaire);
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -134,7 +137,7 @@ header {
     }
     .chiffre_bouton_fonctionnement {
         margin-left: -10px;
-        background-color: violet;
+        background-color: $couleur_primaire;
         padding: 2px 7px;
         border-radius: 50px;
         color: #ffffff;
@@ -172,17 +175,30 @@ header {
     border-radius: 20px;
     margin-bottom: 20px;
     text-decoration: none;
+    position: relative;
     img {
         width: 100%;
         height: 70%;
         object-fit: cover;
         border-radius: 20px 20px 0 0;
     }
-    .card_acceuil_informations {
+    .nouveau_card_restaurant {
+        position: absolute; /* j'ai trouvé comment faire ici : https://www.w3schools.com/howto/howto_css_image_text.asp */
+        top: -3px;
+        right: 20px;
+        background-color: #ccffdd;
+        color: #00b36b;
+        font-weight: 500;
+        padding: 8px;
+        border-radius: 3px;
+    }
+}
+
+.card_acceuil_informations {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    }
+
     h3 {
         color: black;
         margin: 5px 10px;
@@ -198,15 +214,42 @@ header {
     }
 }
 
+@mixin linear_gradient {
+    background: linear-gradient($couleur_secondaire, $couleur_primaire);
+}
+
+i:hover {
+    background: linear-gradient($couleur_secondaire, $couleur_primaire);
+}
+
 footer {
     background-color: $couleur_gris_footer;
-    color: white;
     padding-left: 20px;
-    
-    h3 {
+    height: 210px;
+    p {
         font-family: 'Shrikhand', cursive;
         font-size: 1.2em;
-        margin-top: 0px;
-        padding-top: 10px;
+        margin-top: 0px; /* je mets ça sinon il y a un espace entre la dernère section et le footer */
+        padding-top: 30px;
+        margin-left: 10px;
+    }
+    a {
+    text-decoration: none;
+    color: white;
+    }
+    ul {
+        margin-left: 10px;
+        padding: 0;
+    }
+    li {
+    list-style-type: none;
+    color: white;
+    margin-bottom: 7px;
+    }
+    i {
+        font-size: 1em;
+        margin-right: 10px;
     }
 }
+
+

@@ -29,9 +29,9 @@
         </div>
         <h1>Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-        <div id="bouton_explorer">
+        <a href="#" div id="bouton_explorer">
             <p>Explorer nos restaurants</p>
-        </div>
+        </a>
     </section>
 
     <section id="section_deux">
@@ -58,18 +58,20 @@
     <section id="section_trois">
         <h2>Restaurants</h3>
         <div id="cards_section_trois"> <!-- Je mets une div pour que titre h2 de la section ne soit pas centré, mais seulement les boutons grâce à flexbox -->
-            <a href="#" class="card_acceuil_restaurants">
+            <a href="page_palette_du_gout.html" class="card_acceuil_restaurants">
                 <img src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo_plat">
+                <p class="nouveau_card_restaurant">Nouveau</p> <!-- j'ai trouvé comment le faire ici : https://www.w3schools.com/howto/howto_css_image_text.asp -->
                 <div class="card_acceuil_informations">
                     <div class="card_acceuil_texe">
-                        <h3>La planette du goût</h3>
+                        <h3>La palette du goût</h3>
                         <p>Ménilmontant</p>
                     </div>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-heart" href="#"></i>
                 </div>
             </a>
             <a href="#" class="card_acceuil_restaurants">
                 <img src="/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo_plat">
+                <p class="nouveau_card_restaurant">Nouveau</p> <!-- j'ai trouvé comment le faire ici : https://www.w3schools.com/howto/howto_css_image_text.asp -->
                 <div class="card_acceuil_informations">
                     <div class="card_acceuil_texe">
                         <h3>La note enchantée</h3>
@@ -92,7 +94,7 @@
                 <img src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photo_plat">
                 <div class="card_acceuil_informations">
                     <div class="card_acceuil_texe">
-                        <h3>ÀLe délice des sens</h3>
+                        <h3>Le délice des sens</h3>
                         <p>Folie-Méricourt</p>
                     </div>
                     <i class="fa-regular fa-heart"></i>
@@ -102,12 +104,20 @@
     </section>
 
     <footer>
-        <h3>ohmyfood</h3>
+   <!-- <h3>ohmyfood</h3>
         <p>Proposer un restaurant</p>
         <p>Devenir partenaire</p>
         <p>Mentions légales</p>
-        <p>Contact</p>
-    </footer>
+        <p>Contact</p> -->
+
+        <p><a href="#">ohmyfood</a></p>
+        <ul>
+            <li><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
+            <li><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </footer> 
 
 </body>
 </html>

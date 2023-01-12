@@ -40,9 +40,10 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: linear-gradient;
 }
 #localisation i {
-  margin-right: 15px;
+  margin-right: 10px;
   color: #262626;
 }
 #localisation input[type=search] {
@@ -57,7 +58,7 @@ header img {
 #section_une {
   text-align: center;
   padding-bottom: 50px;
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
 }
 #section_une h1 {
   margin: auto; /* pour centrer le texte */
@@ -75,11 +76,12 @@ header img {
 }
 
 #bouton_explorer {
+  text-decoration: none;
   margin: auto;
   margin-top: 30px;
   width: 230px;
   height: 50px;
-  background-color: violet;
+  background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -111,7 +113,7 @@ header img {
 #section_deux .bouton_fonctionnement {
   display: flex;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   width: 90%;
   border-radius: 20px;
@@ -119,7 +121,7 @@ header img {
 }
 #section_deux .chiffre_bouton_fonctionnement {
   margin-left: -10px;
-  background-color: violet;
+  background-color: #9356DC;
   padding: 2px 7px;
   border-radius: 50px;
   color: #ffffff;
@@ -133,7 +135,7 @@ header img {
 }
 
 #section_trois {
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
   padding-bottom: 40px;
 }
 #section_trois h2 {
@@ -154,6 +156,7 @@ header img {
   border-radius: 20px;
   margin-bottom: 20px;
   text-decoration: none;
+  position: relative;
 }
 .card_acceuil_restaurants img {
   width: 100%;
@@ -161,35 +164,68 @@ header img {
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
-.card_acceuil_restaurants .card_acceuil_informations {
+.card_acceuil_restaurants .nouveau_card_restaurant {
+  position: absolute; /* j'ai trouvé comment faire ici : https://www.w3schools.com/howto/howto_css_image_text.asp */
+  top: -3px;
+  right: 20px;
+  background-color: #ccffdd;
+  color: #00b36b;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.card_acceuil_informations {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.card_acceuil_restaurants h3 {
+.card_acceuil_informations h3 {
   color: black;
   margin: 5px 10px;
 }
-.card_acceuil_restaurants p {
+.card_acceuil_informations p {
   color: black;
   margin: 5px 10px;
 }
-.card_acceuil_restaurants i {
+.card_acceuil_informations i {
   color: #000000;
   margin-right: 20px;
   font-size: 1.5em;
 }
 
+i:hover {
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+
 footer {
   background-color: #1a1a1a;
-  color: white;
   padding-left: 20px;
+  height: 210px;
 }
-footer h3 {
+footer p {
   font-family: "Shrikhand", cursive;
   font-size: 1.2em;
-  margin-top: 0px;
-  padding-top: 10px;
+  margin-top: 0px; /* je mets ça sinon il y a un espace entre la dernère section et le footer */
+  padding-top: 30px;
+  margin-left: 10px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer ul {
+  margin-left: 10px;
+  padding: 0;
+}
+footer li {
+  list-style-type: none;
+  color: white;
+  margin-bottom: 7px;
+}
+footer i {
+  font-size: 1em;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
