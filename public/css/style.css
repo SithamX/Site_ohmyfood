@@ -85,24 +85,18 @@ header img {
 }
 
 #section_deux {
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   padding-bottom: 50px;
+  padding-left: 20px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
 }
 #section_deux h2 {
   margin-left: 20px;
 }
-#section_deux .chiffre_bouton_fonctionnement {
-  margin-left: -10px;
-  background-color: violet;
-  padding: 2px 7px;
-  border-radius: 50px;
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 0.9rem;
+#section_deux #boutons_section_deux {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 #section_deux .bouton_fonctionnement {
   display: flex;
@@ -112,6 +106,15 @@ header img {
   width: 90%;
   border-radius: 20px;
   height: 65px;
+}
+#section_deux .chiffre_bouton_fonctionnement {
+  margin-left: -10px;
+  background-color: violet;
+  padding: 2px 7px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 #section_deux i {
   color: #737373;
