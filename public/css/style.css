@@ -29,7 +29,7 @@ header #logo {
 header img {
   margin-top: 25px;
   margin-bottom: 15px;
-  width: 150px;
+  width: 175px;
   /*border: 1px solid black;*/
 }
 
@@ -45,8 +45,13 @@ header img {
   margin-right: 15px;
   color: #262626;
 }
-#localisation h4 {
+#localisation input[type=search] {
+  border: none;
+  background-color: #e6e6e6;
+  font-size: 1em;
+  font-weight: 700;
   color: #262626;
+  width: 140px;
 }
 
 #section_une {
@@ -86,10 +91,11 @@ header img {
 
 #section_deux {
   padding-bottom: 50px;
-  padding-left: 20px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
+  padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
 }
 #section_deux h2 {
-  margin-left: 20px;
+  margin-left: 12px;
+  padding-top: 25px;
 }
 #section_deux #boutons_section_deux {
   height: 280px;
@@ -97,6 +103,10 @@ header img {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+#section_deux a {
+  text-decoration: none;
+  color: #000000;
 }
 #section_deux .bouton_fonctionnement {
   display: flex;
@@ -124,41 +134,47 @@ header img {
 
 #section_trois {
   background-color: #f2f2f2;
+  padding-bottom: 40px;
+}
+#section_trois h2 {
+  margin-left: 20px;
+  padding-top: 50px;
+}
+#section_trois #cards_section_trois {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 40px;
 }
 
-.card_acceuil {
+.card_acceuil_restaurants {
   background-color: #ffffff;
-  width: 80%;
+  width: 90%;
   height: 210px;
   border-radius: 20px;
   margin-bottom: 20px;
   text-decoration: none;
 }
-.card_acceuil img {
+.card_acceuil_restaurants img {
   width: 100%;
   height: 70%;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
-.card_acceuil .card_acceuil_informations {
+.card_acceuil_restaurants .card_acceuil_informations {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.card_acceuil h3 {
+.card_acceuil_restaurants h3 {
   color: black;
   margin: 5px 10px;
 }
-.card_acceuil p {
+.card_acceuil_restaurants p {
   color: black;
   margin: 5px 10px;
 }
-.card_acceuil i {
+.card_acceuil_restaurants i {
   color: #000000;
   margin-right: 20px;
   font-size: 1.5em;

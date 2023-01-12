@@ -15,9 +15,17 @@
     </header>
 
     <section id="section_une"> 
-        <div id="localisation"> 
+   <!-- <div id="localisation"> 
             <i class="fa-sharp fa-solid fa-location-dot"></i>
             <h4>Paris, Belleville</h4>
+        </div> -->
+        <div id="localisation">
+        <form method="post" action="traitements.php" id="formulaire_de_recherche">
+            <div class="input">
+                <label for="ville" class="localisation"><i class="fa-sharp fa-solid fa-location-dot"></i></label>
+                <input type="search" name="ville" value="Paris, Belleville" id="ville">
+            </div>
+        </form>
         </div>
         <h1>Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
@@ -29,66 +37,68 @@
     <section id="section_deux">
         <h2>Fonctionnement</h2>
         <div id="boutons_section_deux"> <!-- Je mets une div pour que titre h2 de la section ne soit pas centré, mais seulement les boutons grâce à flexbox -->
-            <div class="bouton_fonctionnement">
+            <a href="#" class="bouton_fonctionnement">
                 <p class="chiffre_bouton_fonctionnement">1</p>
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <h3>Choisissez un restaurant</h3>
-            </div>
-            <div class="bouton_fonctionnement">
+            </a>
+            <a href="#" class="bouton_fonctionnement">
                 <p class="chiffre_bouton_fonctionnement">2</p>
                 <i class="fa-sharp fa-solid fa-list-ul"></i>
                 <h3>Composez votre menu</h3>
-            </div>
-            <div class="bouton_fonctionnement">
+            </a>
+            <a href="#" class="bouton_fonctionnement">
                 <p class="chiffre_bouton_fonctionnement">3</p>
                 <i class="fa-solid fa-store"></i>
                 <h3>Dégustez au restaurant</h3>
-            </div>
+            </a>
         </div>
     </section>
 
     <section id="section_trois">
         <h2>Restaurants</h3>
-        <a href="#" class="card_acceuil">
-            <img src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo_plat">
-            <div class="card_acceuil_informations">
-                <div class="card_acceuil_texe">
-                    <h3>La planette du goût</h3>
-                    <p>Ménilmontant</p>
+        <div id="cards_section_trois"> <!-- Je mets une div pour que titre h2 de la section ne soit pas centré, mais seulement les boutons grâce à flexbox -->
+            <a href="#" class="card_acceuil_restaurants">
+                <img src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo_plat">
+                <div class="card_acceuil_informations">
+                    <div class="card_acceuil_texe">
+                        <h3>La planette du goût</h3>
+                        <p>Ménilmontant</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-            </div>
-        </a>
-        <a href="#" class="card_acceuil">
-            <img src="/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo_plat">
-            <div class="card_acceuil_informations">
-                <div class="card_acceuil_texe">
-                    <h3>La note enchantée</h3>
-                    <p>Charonne</p>
+            </a>
+            <a href="#" class="card_acceuil_restaurants">
+                <img src="/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo_plat">
+                <div class="card_acceuil_informations">
+                    <div class="card_acceuil_texe">
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-            </div>
-        </a>
-        <a href="#" class="card_acceuil">
-            <img src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photo_plat">
-            <div class="card_acceuil_informations">
-                <div class="card_acceuil_texe">
-                    <h3>À la française</h3>
-                    <p>Cité Rouge</p>
+            </a>
+            <a href="#" class="card_acceuil_restaurants">
+                <img src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photo_plat">
+                <div class="card_acceuil_informations">
+                    <div class="card_acceuil_texe">
+                        <h3>À la française</h3>
+                        <p>Cité Rouge</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-            </div>
-        </a>
-        <a href="#" class="card_acceuil">
-            <img src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photo_plat">
-            <div class="card_acceuil_informations">
-                <div class="card_acceuil_texe">
-                    <h3>ÀLe délice des sens</h3>
-                    <p>Folie-Méricourt</p>
+            </a>
+            <a href="#" class="card_acceuil_restaurants">
+                <img src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photo_plat">
+                <div class="card_acceuil_informations">
+                    <div class="card_acceuil_texe">
+                        <h3>ÀLe délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-            </div>
-        </a>
+            </a>
+        </div>
     </section>
 
     <footer>

@@ -41,7 +41,7 @@ header {
     img {
         margin-top: 25px;
         margin-bottom: 15px;
-        width: 150px;
+        width: 175px;
         /*border: 1px solid black;*/
     }
 }
@@ -57,8 +57,14 @@ header {
         margin-right: 15px;
         color:  #262626;
     }
-    h4 {
+    input[type="search"]
+    {
+        border: none;
+        background-color: $couleur_gris_fonce;
+        font-size: 1em;
+        font-weight: 700;
         color:  #262626;
+        width: 140px;
     }
 }
 
@@ -100,9 +106,10 @@ header {
 
 #section_deux {
     padding-bottom: 50px;
-    padding-left: 20px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */ 
+    padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */ 
     h2 {
-        margin-left: 20px;
+        margin-left: 12px;
+        padding-top: 25px;
     }    
     #boutons_section_deux {
         height: 280px;
@@ -110,7 +117,11 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    }         
+    }       
+    a {
+        text-decoration: none;
+        color: #000000;
+    }  
     .bouton_fonctionnement {
         display: flex;
         align-items: center;
@@ -141,16 +152,22 @@ header {
 
 #section_trois {
     background-color: $couleur_gris_clair;
+    padding-bottom: 40px;
+    h2 {
+        margin-left: 20px;
+        padding-top: 50px; 
+    }
+    #cards_section_trois {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 40px;
+    }
 }
 
-.card_acceuil {
+.card_acceuil_restaurants {
     background-color: #ffffff;
-    width: 80%;
+    width: 90%;
     height: 210px;
     border-radius: 20px;
     margin-bottom: 20px;
