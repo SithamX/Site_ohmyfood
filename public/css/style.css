@@ -54,13 +54,26 @@ p {
   border-radius: 40px 40px 0 0;
   border-top: 1px solid #f7f7f7;
 }
+.section_page_deux .titres_pages_restaurants {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-article h1 {
+.titres_pages_restaurants h1 {
   font-family: "Shrikhand", cursive;
   font-weight: normal;
   margin-left: 15px;
 }
-article h2 {
+.titres_pages_restaurants i {
+  font-size: 1.5em;
+  margin-right: 40px;
+}
+
+.articles_pages_restaurants {
+  margin-bottom: 30px;
+}
+.articles_pages_restaurants h2 {
   font-weight: 300;
   font-size: 1em;
   margin-left: 15px;
@@ -68,7 +81,7 @@ article h2 {
   text-underline-offset: 8px;
   margin-bottom: 20px;
 }
-article .card_e_p_d {
+.articles_pages_restaurants .card_e_p_d {
   background-color: #ffffff;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   width: 90%;
@@ -77,11 +90,18 @@ article .card_e_p_d {
   margin-bottom: 12px;
 }
 
+.card_e_p_d {
+  text-decoration: none;
+}
 .card_e_p_d h3 {
   font-size: 1.1em;
   padding-top: 8px;
   padding-left: 8px;
   margin: 0;
+}
+.card_e_p_d .informations_prix {
+  display: flex;
+  justify-content: space-between;
 }
 .card_e_p_d p {
   font-size: 0.9em;
@@ -89,6 +109,35 @@ article .card_e_p_d {
   padding-top: 2px;
   padding-left: 8px;
   padding-bottom: 8px;
+}
+.card_e_p_d p:nth-child(1) {
+  /*width: 290px;
+  height: 10px;
+  overflow: hidden;*/
+  white-space: nowrap;
+  overflow: hidden; /* j'ai trouvé cette technique ici : https://www.digitalocean.com/community/tutorials/css-prevent-line-break-fr */
+  text-overflow: ellipsis;
+}
+.card_e_p_d .prix {
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+#bouton_commander {
+  text-decoration: none;
+  margin: auto;
+  margin-top: 30px;
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#bouton_commander p {
+  color: #ffffff;
+  font-weight: 500;
 }
 
 body {
@@ -169,6 +218,7 @@ header img {
   border-radius: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 #bouton_explorer p {
   color: #ffffff;
