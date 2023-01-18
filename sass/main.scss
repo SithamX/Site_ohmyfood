@@ -1,31 +1,20 @@
 @import "./polices.scss";
+@import "./variables.scss";
+@import "./page_deux.scss";
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
-h1 {
-    font-size: 1.5em; /* même taille que celle de base*/
-}
-  
 
-h3 {
-    font-weight: 700;
-    font-size: 1em;
-}
-
-p {
-    font-weight: 300;
-}
-
-$couleur_gris_fonce: #e6e6e6;
+/* $couleur_gris_fonce: #e6e6e6;
 $couleur_gris_clair: #f7f7f7;
 $couleur_gris_footer: #1a1a1a;
 $couleur_gris_logo: #737373;
 $couleur_primaire: #9356DC;
 $couleur_secondaire: #FF79DA;
-$couleur_tertiaire: #99E2D0;
+$couleur_tertiaire: #99E2D0; */
 
 
 
@@ -42,7 +31,7 @@ header {
     img {
         margin-top: 25px;
         margin-bottom: 15px;
-        width: 175px;
+        width: 160px;
         /*border: 1px solid black;*/
     }
 }
@@ -112,6 +101,7 @@ header {
     padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */ 
     h2 {
         margin-left: 12px;
+        margin-top: 0;
         padding-top: 25px;
     }    
     #boutons_section_deux {
@@ -159,6 +149,7 @@ header {
     h2 {
         margin-left: 20px;
         padding-top: 50px; 
+        margin-top: 0;
     }
     #cards_section_trois {
     display: flex;
