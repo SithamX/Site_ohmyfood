@@ -21,13 +21,11 @@
             <i class="fa-sharp fa-solid fa-location-dot"></i>
             <h4>Paris, Belleville</h4>
         </div> -->
-        <div id="localisation">
-        <form method="post" action="traitements.php" id="formulaire_de_recherche">
-            <div class="input">
-                <label for="ville" class="localisation"><i class="fa-sharp fa-solid fa-location-dot"></i></label>
-                <input type="search" name="ville" value="Paris, Belleville" id="ville">
-            </div>
-        </form>
+        <div class="formulaire-localisation formulaire-localisation__div">
+            <form method="post" action="traitements.php">
+                <label for="ville" class="formulaire-localisation__icone"><i class="fa-sharp fa-solid fa-location-dot"></i></label>
+                <input type="search" name="ville" value="Paris, Belleville" id="ville" class="formulaire-localisation__ville">
+            </form>
         </div>
         <h1>Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>

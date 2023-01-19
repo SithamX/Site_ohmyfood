@@ -37,7 +37,8 @@ $couleur_tertiaire: #99E2D0; */
     }
 }
 
-#localisation {
+.formulaire-localisation {
+    &__div {
     height: 50px;
     background-color: $couleur_gris_fonce;
     /*border-top: 1px solid #737373 #f2f2f2;*/
@@ -45,11 +46,12 @@ $couleur_tertiaire: #99E2D0; */
     justify-content: center;
     align-items: center;
     border-top: linear-gradient;
-    i {
+    }
+    &__icone {
         margin-right: 10px;
         color:  #262626;
     }
-    input[type="search"]
+    &__ville
     {
         border: none;
         background-color: $couleur_gris_fonce;
