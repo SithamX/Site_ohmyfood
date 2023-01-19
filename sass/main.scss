@@ -22,15 +22,16 @@ $couleur_tertiaire: #99E2D0; */
     font-weight: 400;
 }
 
-header {
+.header_page_principale {
+    height: 70px;
+    padding-top: 10px; /* c'est pour créer un espace en haut plus important qu'en bas comme sur la maquette */
     display: flex;
     justify-content: center;
+    align-items: center;
     #logo {
         font-size: 0; /* grâe à l'inspecteur d'éléments j'ai pu voir qu'il y avait bizzarement un font-size qui créait un léger espacement en bas du logo, donc en le mettant sur zero, cela résoud le problème */
     }    
     img {
-        margin-top: 25px;
-        margin-bottom: 15px;
         width: 160px;
         /*border: 1px solid black;*/
     }
@@ -106,7 +107,7 @@ header {
         padding-top: 25px;
     }    
     #boutons_section_deux {
-        height: 280px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -190,7 +191,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     h3 {
         color: black;
         margin: 5px 10px;
@@ -200,7 +200,7 @@ header {
         margin: 5px 10px;
     }
     i {
-        color: #000000;
+        color: red;
         margin-right: 20px;
         font-size: 1.5em;
     }
@@ -244,4 +244,53 @@ footer {
     }
 }
 
+
+/* @media screen and (min-width: 1024px){
+    #boutons_section_deux {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        }      
+    
+        .bouton_fonctionnement {
+            
+            background-color: blue;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+            width: 90%;
+            border-radius: 20px;
+            height: 65px;
+          
+        }
+        .chiffre_bouton_fonctionnement {
+            margin-left: -10px;
+            background-color: $couleur_primaire;
+            padding: 2px 7px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        #section_trois #cards_section_trois {
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+    }
+    .card_acceuil_restaurants {
+        width: 600px;
+        border: 1px solid black;
+    }
+}
+
+
+@media screen and (min-width: 1440px){
+    main {
+        width: 1400px;
+        margin: auto;
+    }
+    header {
+        width: 100%;
+    }
+} */
 
