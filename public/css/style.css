@@ -230,7 +230,7 @@ $couleur_tertiaire: #99E2D0; */
   justify-content: center;
 }
 
-#bouton_explorer {
+#bouton-explorer {
   text-decoration: none;
   margin: auto;
   margin-top: 30px;
@@ -242,7 +242,7 @@ $couleur_tertiaire: #99E2D0; */
   align-items: center;
   justify-content: center;
 }
-#bouton_explorer p {
+#bouton-explorer p {
   color: #ffffff;
   font-weight: 500;
 }
@@ -256,18 +256,19 @@ $couleur_tertiaire: #99E2D0; */
   margin-top: 0;
   padding-top: 25px;
 }
-#section_deux #boutons_section_deux {
-  height: 280px;
+
+.boutons-fonctionnement__div {
+  height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
-#section_deux a {
+.boutons-fonctionnement a {
   text-decoration: none;
   color: #000000;
 }
-#section_deux .bouton_fonctionnement {
+.boutons-fonctionnement__bouton {
   display: flex;
   align-items: center;
   background-color: #f7f7f7;
@@ -276,7 +277,7 @@ $couleur_tertiaire: #99E2D0; */
   border-radius: 20px;
   height: 65px;
 }
-#section_deux .chiffre_bouton_fonctionnement {
+.boutons-fonctionnement__numéro {
   margin-left: -10px;
   background-color: #9356DC;
   padding: 2px 7px;
@@ -285,7 +286,7 @@ $couleur_tertiaire: #99E2D0; */
   font-weight: 500;
   font-size: 0.9rem;
 }
-#section_deux i {
+.boutons-fonctionnement i {
   color: #737373;
   margin-left: 30px;
   margin-right: 20px;

@@ -82,7 +82,7 @@ $couleur_tertiaire: #99E2D0; */
     }
 }
 
-#bouton_explorer {
+#bouton-explorer {
     text-decoration: none;
     margin: auto;
     margin-top: 30px;
@@ -108,18 +108,21 @@ $couleur_tertiaire: #99E2D0; */
         margin-top: 0;
         padding-top: 25px;
     }    
-    #boutons_section_deux {
-    height: 280px;
+}
+
+.boutons-fonctionnement {
+    &__div{
+    height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    }       
+    justify-content: space-between;
+    align-items: center;       
+    }
     a {
         text-decoration: none;
         color: #000000;
     }  
-    .bouton_fonctionnement {
+    &__bouton {
         display: flex;
         align-items: center;
         background-color: $couleur_gris_clair;
@@ -129,7 +132,7 @@ $couleur_tertiaire: #99E2D0; */
         height: 65px;
       
     }
-    .chiffre_bouton_fonctionnement {
+    &__numéro {
         margin-left: -10px;
         background-color: $couleur_primaire;
         padding: 2px 7px;
