@@ -22,6 +22,10 @@ $couleur_tertiaire: #99E2D0; */
     font-weight: 400;
 }
 
+@mixin ombre_element {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+}
+
 .header_page_principale {
     height: 70px;
     padding-top: 10px; /* c'est pour créer un espace en haut plus important qu'en bas comme sur la maquette */
@@ -126,7 +130,7 @@ $couleur_tertiaire: #99E2D0; */
         display: flex;
         align-items: center;
         background-color: $couleur_gris_clair;
-        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+        @include ombre_element;
         width: 90%;
         border-radius: 20px;
         height: 65px;
