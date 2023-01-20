@@ -31,7 +31,8 @@
     object-fit: cover;
     }
 }
-.section_page_deux { 
+
+.section-pages-restaurants { 
     background-color: $couleur_gris_clair;
     padding-bottom: 30px;
     position: relative;
@@ -39,14 +40,12 @@
     margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
     border-radius: 40px 40px 0 0;
     border-top: 1px solid $couleur_gris_clair;
-    .titres_pages_restaurants {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
-.titres_pages_restaurants {
+.titres-pages-restaurants {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     h1 {
         font-family: 'Shrikhand', cursive;
         font-weight: normal;
@@ -58,7 +57,7 @@
     }
 }
 
-.articles_pages_restaurants {
+.articles-pages-restaurants {
     margin-bottom: 30px;
     h2 {
         font-weight: 300;
@@ -68,26 +67,29 @@
         text-underline-offset: 8px;
         margin-bottom: 20px;
     }
-    .card_e_p_d {
-        background-color: #ffffff;
-        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
-        width: 90%;
-        border-radius: 15px;
-        margin: auto;
-        margin-bottom: 12px;
-    }
 }
 
-.card_e_p_d {
+.boutons-pages-restaurants {
+    &__bouton {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+    width: 90%;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 12px;
     text-decoration: none;
-  
+    transition: transform 400ms;
+    }
+    &__bouton:hover {
+        transform: scale(1.15);
+    }
     h3 {
         font-size: 1.1em;
         padding-top: 8px;
         padding-left: 8px;
         margin: 0
     }
-    .informations_prix {
+    &__informations {
         display: flex;
         justify-content: space-between;
     }
@@ -106,9 +108,9 @@
         overflow: hidden;     /* j'ai trouvé cette technique ici : https://www.digitalocean.com/community/tutorials/css-prevent-line-break-fr */
         text-overflow: ellipsis;
     }
-    .prix {
+    &__prix {
         font-weight: 700;
-        margin-right: 20px;
+        padding-right: 20px;
     }
 }
 
