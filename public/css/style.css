@@ -99,10 +99,16 @@ p {
 .articles-pages-restaurants h2 {
   font-weight: 300;
   font-size: 1em;
-  margin-left: 15px;
-  text-decoration: underline 3px green;
+  padding-left: 15px;
+  margin: 0;
+  /*text-decoration: underline 3px green;
   text-underline-offset: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 20px;*/
+}
+.articles-pages-restaurants .h2_souligne {
+  margin: 5px 0 13px 15px;
+  width: 40px;
+  border-top: 3px solid green;
 }
 
 .boutons-pages-restaurants__bouton {
