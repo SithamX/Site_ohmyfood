@@ -12,10 +12,6 @@ h3 {
   font-size: 1em;
 }
 
-h2 {
-  font-size: 1.2em;
-}
-
 p {
   font-weight: 300;
 }
@@ -29,10 +25,6 @@ h1 {
 h3 {
   font-weight: 700;
   font-size: 1em;
-}
-
-h2 {
-  font-size: 1.2em;
 }
 
 p {
@@ -75,7 +67,7 @@ p {
   top: -40px;
   margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
   border-radius: 40px 40px 0 0;
-  border-top: 1px solid #f7f7f7;
+  /*border-top: 1px solid $couleur_gris_clair;*/
 }
 
 .titres-pages-restaurants {
@@ -111,6 +103,18 @@ p {
   border-top: 3px solid green;
 }
 
+.boutons-pages-restaurants {
+  display: flex;
+  flex-direction: column;
+  /*&__bouton:hover {
+      transform: scale(1.15);
+  }*/
+  /*&__remplissage-droite:hover {
+  /*display: none;*/
+  /* display: flex;
+   transform: scaleX(1);
+   }*/
+}
 .boutons-pages-restaurants__bouton {
   background-color: #ffffff;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
@@ -119,10 +123,11 @@ p {
   margin: auto;
   margin-bottom: 12px;
   text-decoration: none;
-  transition: transform 400ms;
-}
-.boutons-pages-restaurants__bouton:hover {
-  transform: scale(1.15);
+  color: #000000;
+  display: inline-block;
+  position: relative;
+  /*transition: transform 400ms;*/
+  /*cursor: pointer;*/
 }
 .boutons-pages-restaurants h3 {
   font-size: 1.1em;
@@ -133,6 +138,7 @@ p {
 .boutons-pages-restaurants__informations {
   display: flex;
   justify-content: space-between;
+  flex: 1;
 }
 .boutons-pages-restaurants p {
   font-size: 0.9em;
@@ -152,6 +158,31 @@ p {
 .boutons-pages-restaurants__prix {
   font-weight: 700;
   padding-right: 20px;
+}
+.boutons-pages-restaurants__prix:hover {
+  padding-right: 30px;
+}
+.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__remplissage-droite {
+  opacity: 1;
+}
+.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__prix {
+  margin-right: 60px;
+}
+.boutons-pages-restaurants__remplissage-droite {
+  background-color: orange;
+  border-radius: 0px 15px 15px 0;
+  width: 60px;
+  height: 57px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  opacity: 0;
+  /* margin-right: -70px;/*
+
+   /*opacity: 0;*/
+  /*transform-origin: 0% 50%;
+  transform: scaleX(0);
+  transition: transform 1000ms;*/
 }
 
 #bouton_commander {
