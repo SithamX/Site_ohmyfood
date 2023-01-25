@@ -224,6 +224,9 @@ p {
   color: #ffffff;
   font-weight: 500;
 }
+#bouton_commander:hover {
+  opacity: 0.9;
+}
 
 body {
   font-family: "Roboto", sans-serif;
