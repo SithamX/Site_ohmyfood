@@ -89,6 +89,7 @@
     color: #000000;
     display: inline-block;
     position: relative;
+    overflow: hidden;
     /*transition: transform 400ms;*/
     /*cursor: pointer;*/
     }
@@ -124,15 +125,22 @@
     &__prix {
         font-weight: 700;
         padding-right: 20px;
+        transition-duration: 800ms;
+        transition-timing-function: ease;
     }
     &__prix:hover {
-        padding-right: 30px;
+        /*padding-right: 30px;*/
+        /*transition-duration: 800ms;
+        transition-timing-function: ease;*/
     }
     &:hover + &__remplissage-droite{
 
     }
     &__bouton:hover &__remplissage-droite {
         opacity: 1;
+        right: 0;
+        transition-duration: 500ms;
+        transition-timing-function: ease;
     }
     &__bouton:hover &__prix {
         margin-right: 60px;
@@ -144,8 +152,10 @@
         height: 57px;
         position: absolute;
         top: 0px;
-        right: 0px;
-        opacity: 0;
+        right: -200px;
+        /*opacity: 0;*/
+        transition-timing-function: ease;
+        transition-duration: 500ms;
        /* margin-right: -70px;/*
 
         /*opacity: 0;*/

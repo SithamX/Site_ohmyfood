@@ -126,6 +126,7 @@ p {
   color: #000000;
   display: inline-block;
   position: relative;
+  overflow: hidden;
   /*transition: transform 400ms;*/
   /*cursor: pointer;*/
 }
@@ -158,12 +159,19 @@ p {
 .boutons-pages-restaurants__prix {
   font-weight: 700;
   padding-right: 20px;
+  transition-duration: 800ms;
+  transition-timing-function: ease;
 }
 .boutons-pages-restaurants__prix:hover {
-  padding-right: 30px;
+  /*padding-right: 30px;*/
+  /*transition-duration: 800ms;
+  transition-timing-function: ease;*/
 }
 .boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__remplissage-droite {
   opacity: 1;
+  right: 0;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
 }
 .boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__prix {
   margin-right: 60px;
@@ -175,8 +183,10 @@ p {
   height: 57px;
   position: absolute;
   top: 0px;
-  right: 0px;
-  opacity: 0;
+  right: -200px;
+  /*opacity: 0;*/
+  transition-timing-function: ease;
+  transition-duration: 500ms;
   /* margin-right: -70px;/*
 
    /*opacity: 0;*/
