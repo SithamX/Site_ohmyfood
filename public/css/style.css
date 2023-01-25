@@ -169,13 +169,9 @@ p {
 }
 .boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__remplissage-droite {
   opacity: 1;
-<<<<<<< HEAD
   right: 0;
   transition-duration: 500ms;
   transition-timing-function: ease;
-=======
-  transform: translate(-50px);
->>>>>>> 301bd39f524fc392d060ed82789e7dcb6f6dd411
 }
 .boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__prix {
   margin-right: 60px;
@@ -187,16 +183,10 @@ p {
   height: 57px;
   position: absolute;
   top: 0px;
-<<<<<<< HEAD
   right: -200px;
   /*opacity: 0;*/
   transition-timing-function: ease;
   transition-duration: 500ms;
-=======
-  right: -50px;
-  opacity: 0;
-  transition: transform 330ms ease-in-out;
->>>>>>> 301bd39f524fc392d060ed82789e7dcb6f6dd411
   /* margin-right: -70px;/*
 
    /*opacity: 0;*/

@@ -138,13 +138,9 @@
     }
     &__bouton:hover &__remplissage-droite {
         opacity: 1;
-<<<<<<< HEAD
         right: 0;
         transition-duration: 500ms;
         transition-timing-function: ease;
-=======
-        transform: translate(-50px);
->>>>>>> 301bd39f524fc392d060ed82789e7dcb6f6dd411
     }
     &__bouton:hover &__prix {
         margin-right: 60px;
@@ -156,16 +152,10 @@
         height: 57px;
         position: absolute;
         top: 0px;
-<<<<<<< HEAD
         right: -200px;
         /*opacity: 0;*/
         transition-timing-function: ease;
         transition-duration: 500ms;
-=======
-        right: -50px;
-        opacity: 0;
-        transition: transform 330ms ease-in-out;
->>>>>>> 301bd39f524fc392d060ed82789e7dcb6f6dd411
        /* margin-right: -70px;/*
 
         /*opacity: 0;*/
