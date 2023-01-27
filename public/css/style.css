@@ -194,8 +194,8 @@ p {
   height: 57px;
   position: absolute;
   top: 0px;
-  right: -200px;
-  /*opacity: 0;*/
+  right: -100px;
+  opacity: 0; /* avant d'arriver on ne voit pas sa transparence mais quand le curseur de la souris sort du bouton, on voit un effet de transparence s'appliquer au remplissage un peu après avoir fini de disparaitre, chose assez esthétique, je vais demander au mentor si je l'enlève pour etre parfaitement comme dans la vidéo de l'effet dans la maquette ou si je le laisse */
   transition-timing-function: ease;
   transition-duration: 500ms;
   /* margin-right: -70px;/*
