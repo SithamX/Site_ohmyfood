@@ -221,10 +221,9 @@ $couleur_tertiaire: #99E2D0; */
         margin-right: 20px;
         font-size: 1.5em;
     }
-}
-
-i:hover {
-    background: linear-gradient($couleur_secondaire, $couleur_primaire);
+    i:hover {
+        background: linear-gradient($couleur_secondaire, $couleur_primaire);
+    }
 }
 
 footer {

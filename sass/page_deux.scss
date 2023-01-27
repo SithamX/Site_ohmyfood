@@ -51,11 +51,23 @@
         font-weight: normal;
         margin-left: 15px;
     }
-    i {
+    &__icone-vide {
         font-size: 1.5em;
         margin-right: 40px;
     }
+    &__icone-vide:hover {
+        display: none;
+    }
+    &__icone-remplie {
+        display: none;
+        opacity: 0;
+    }
+    &__icone-vide:hover &__icone-remplie {
+        display: flex;
+        opacity: 1;
+    }
 }
+
 
 .articles-pages-restaurants {
     margin-bottom: 30px;
@@ -125,7 +137,7 @@
     &__prix {
         font-weight: 700;
         padding-right: 20px;
-        transition-duration: 400ms;
+        transition-duration: 300ms;
         transition-timing-function: ease;
     }
     &__prix:hover {
@@ -172,7 +184,7 @@
         color: white;
         font-size: 1.4em;
         rotate: 90deg;
-        transition: transform 800ms ease-in-out;
+        transition: transform 500ms ease-in-out;
     }
     &__bouton:hover &__icone-remplissage {
          transform: rotate(270deg);
@@ -193,16 +205,21 @@
     width: 150px;
     height: 50px;
     background: linear-gradient($couleur_secondaire, $couleur_primaire);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
     p {
         color: #ffffff;
         font-weight: 500;
     }
     &:hover {
         opacity: 0.9;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
     }
 }
 

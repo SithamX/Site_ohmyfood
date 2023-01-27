@@ -80,9 +80,20 @@ p {
   font-weight: normal;
   margin-left: 15px;
 }
-.titres-pages-restaurants i {
+.titres-pages-restaurants__icone-vide {
   font-size: 1.5em;
   margin-right: 40px;
+}
+.titres-pages-restaurants__icone-vide:hover {
+  display: none;
+}
+.titres-pages-restaurants__icone-remplie {
+  display: none;
+  opacity: 0;
+}
+.titres-pages-restaurants__icone-vide:hover .titres-pages-restaurants__icone-remplie {
+  display: flex;
+  opacity: 1;
 }
 
 .articles-pages-restaurants {
@@ -159,7 +170,7 @@ p {
 .boutons-pages-restaurants__prix {
   font-weight: 700;
   padding-right: 20px;
-  transition-duration: 400ms;
+  transition-duration: 300ms;
   transition-timing-function: ease;
 }
 .boutons-pages-restaurants__prix:hover {
@@ -202,7 +213,7 @@ p {
   color: white;
   font-size: 1.4em;
   rotate: 90deg;
-  transition: transform 800ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 .boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__icone-remplissage {
   transform: rotate(270deg);
@@ -215,10 +226,14 @@ p {
   width: 150px;
   height: 50px;
   background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
 }
 #bouton_commander p {
   color: #ffffff;
@@ -226,6 +241,7 @@ p {
 }
 #bouton_commander:hover {
   opacity: 0.9;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -421,8 +437,7 @@ $couleur_tertiaire: #99E2D0; */
   margin-right: 20px;
   font-size: 1.5em;
 }
-
-i:hover {
+.card-restaurant-informations i:hover {
   background: linear-gradient(#FF79DA, #9356DC);
 }
 
