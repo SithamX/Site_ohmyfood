@@ -102,9 +102,16 @@ $couleur_tertiaire: #99E2D0; */
     align-items: center;
     justify-content: center;
     @include ombre-element;
+    opacity: 1;
+    transition-timing-function: ease;
+    transition-duration: 300ms; /* Si je le mets là la page subit un leger decalage vers le bas puis le haut lorsque l'on la raffraichit, et si je le mets dans le :hover ça ne le fait plus, or, il n'y à plus de transition lorsque le bouton revient a son opacité d'origine, c'est trop brutal, donc je vais demander l'avis du mentor */
     p {
         color: #ffffff;
         font-weight: 500;
+    }
+    &:hover {
+        opacity: 0.9;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
     }
 }
 
@@ -139,7 +146,12 @@ $couleur_tertiaire: #99E2D0; */
         width: 90%;
         border-radius: 20px;
         height: 65px;
-      
+        transition-duration: 300ms;
+        transition-timing-function: ease;
+    }
+    &__bouton:hover {
+        background-color: $couleur_gris_fonce;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
     }
     &__numéro {
         margin-left: -10px;

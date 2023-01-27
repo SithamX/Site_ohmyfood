@@ -70,29 +70,34 @@ p {
   /*border-top: 1px solid $couleur_gris_clair;*/
 }
 
-.titres-pages-restaurants {
+.titre-pages-restaurants {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.titres-pages-restaurants h1 {
+.titre-pages-restaurants h1 {
   font-family: "Shrikhand", cursive;
   font-weight: normal;
   margin-left: 15px;
 }
-.titres-pages-restaurants__icone-vide {
+.titre-pages-restaurants__icone-vide {
   font-size: 1.5em;
   margin-right: 40px;
+  color: black;
 }
-.titres-pages-restaurants__icone-vide:hover {
-  display: none;
+.titre-pages-restaurants__icone-remplie {
+  font-size: 1.5em;
+  position: absolute;
+  right: 40px;
+  opacity: 1;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  text-decoration: none;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient to right, red, green;
 }
-.titres-pages-restaurants__icone-remplie {
-  display: none;
-  opacity: 0;
-}
-.titres-pages-restaurants__icone-vide:hover .titres-pages-restaurants__icone-remplie {
-  display: flex;
+.titre-pages-restaurants__icone-remplie:hover {
   opacity: 1;
 }
 
@@ -188,7 +193,7 @@ p {
   margin-right: 60px;
 }
 .boutons-pages-restaurants__remplissage-droite {
-  background-color: green;
+  background-color: #99E2D0;
   border-radius: 0px 15px 15px 0;
   width: 55px;
   height: 57px;
@@ -325,10 +330,17 @@ $couleur_tertiaire: #99E2D0; */
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition-timing-function: ease;
+  transition-duration: 300ms; /* Si je le mets là la page subit un leger decalage vers le bas puis le haut lorsque l'on la raffraichit, et si je le mets dans le :hover ça ne le fait plus, or, il n'y à plus de transition lorsque le bouton revient a son opacité d'origine, c'est trop brutal, donc je vais demander l'avis du mentor */
 }
 #bouton-explorer p {
   color: #ffffff;
   font-weight: 500;
+}
+#bouton-explorer:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 #section-deux {
@@ -360,6 +372,12 @@ $couleur_tertiaire: #99E2D0; */
   width: 90%;
   border-radius: 20px;
   height: 65px;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+.boutons-fonctionnement__bouton:hover {
+  background-color: #e6e6e6;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 .boutons-fonctionnement__numéro {
   margin-left: -10px;
