@@ -84,21 +84,27 @@ p {
   font-size: 1.5em;
   margin-right: 40px;
   color: black;
+  opacity: 1;
+  transition: all 0.3s ease-in;
 }
 .titre-pages-restaurants__icone-remplie {
   font-size: 1.5em;
   position: absolute;
   right: 40px;
-  opacity: 1;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
+  opacity: 0;
+  transition: all 0.3s ease-in;
   text-decoration: none;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient to right, red, green;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.titre-pages-restaurants__icone-remplie:hover {
+.titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-remplie {
   opacity: 1;
+}
+.titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-vide {
+  opacity: 0;
 }
 
 .articles-pages-restaurants {
@@ -116,7 +122,7 @@ p {
 .articles-pages-restaurants .h2_souligne {
   margin: 5px 0 13px 15px;
   width: 40px;
-  border-top: 3px solid green;
+  border-top: 3px solid #99E2D0;
 }
 
 .boutons-pages-restaurants {
