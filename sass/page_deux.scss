@@ -55,21 +55,27 @@
         font-size: 1.5em;
         margin-right: 40px;
         color: black;
+        opacity: 1;
+        transition: all 0.3s ease-in;
     }
     &__icone-remplie {
         font-size: 1.5em;
         position: absolute;
         right: 40px;
-        opacity: 1;
-        transition-duration: 300ms;
-        transition-timing-function: ease;
+        opacity: 0;
+        transition: all 0.3s ease-in;
         text-decoration: none;
         color: transparent;
         background-clip: text;
-        background-image: linear-gradient (to right, red, green);
+        background: linear-gradient(#9356DC, #FF79DA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
-    &__icone-remplie:hover {
+    &__div-favoris:hover &__icone-remplie {
         opacity: 1;
+    }
+    &__div-favoris:hover &__icone-vide {
+        opacity: 0;
     }
 }
 
@@ -88,7 +94,7 @@
     .h2_souligne {
         margin: 5px 0 13px 15px;
         width: 40px;
-        border-top: 3px solid green;
+        border-top: 3px solid $couleur_tertiaire;
     }
 }
 

@@ -233,8 +233,34 @@ $couleur_tertiaire: #99E2D0; */
         margin-right: 20px;
         font-size: 1.5em;
     }
-    i:hover {
+    /*i:hover {
         background: linear-gradient($couleur_secondaire, $couleur_primaire);
+    }*/
+    &__icone-vide {
+        font-size: 1.5em;
+        margin-right: 20px;
+        color: black;
+        opacity: 1;
+        transition: all 0.3s ease-in;
+    }
+    &__icone-remplie {
+        font-size: 1.5em;
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transition: all 0.3s ease-in;
+        text-decoration: none;
+        color: transparent;
+        background-clip: text;
+        background: linear-gradient(#9356DC, #FF79DA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__div-favoris:hover &__icone-remplie {
+        opacity: 1;
+    }
+    &__div-favoris:hover &__icone-vide {
+        opacity: 0;
     }
 }
 
