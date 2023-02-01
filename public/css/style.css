@@ -270,18 +270,23 @@ p {
     opacity: 0.8;
     /*position: relative;*/
     /*display: none;*/
-    right: -3000px; /* pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
+    right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
   }
 }
 .page-chargement {
-  position: absolute;
+  position: fixed; /* ça permet de rendre le logo dans la div centré même si je fais défiler la page */
   background-color: #eaeaea;
   width: 100%;
   height: 100%;
-  animation: chargement-fond 7s;
+  animation: chargement-fond 20s;
   animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
 }
 .page-chargement__texte {
+  padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
   font-family: "Shrikhand", cursive;
   font-size: 3em;
   background: linear-gradient(#9356DC, #FF79DA);
@@ -289,8 +294,57 @@ p {
   -webkit-text-fill-color: transparent;
   -webkit-animation: rotate-scale-up 0.65s linear both;
   animation: rotate-scale-up 0.65s linear both;
+  opacity: 1;
+}
+.page-chargement__texte span:nth-child(1) {
+  opacity: 0;
+  animation: texte-un 6s;
 }
 
+@keyframes texte-un {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* .main-page-principale {
+    animation: cards_arrière_plan 7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cards_arrière_plan {   C'était un test je peux le supprimer 
+    from {
+        position: relative;
+        right: -3000px;
+    }
+    to {
+        display: flex;       
+    }
+} */
+/* @keyframes cards_arrière_plan {
+    from {
+        position: fixed;
+    }
+    to {
+        position: relative;            C'est pour faire en sorte qu'elles ne se mettent pas au dessus de la div de chargement de la page
+    }
+}
+
+.cards-restaurants__card {
+    animation: cards_arrière_plan 7s;
+    animation-fill-mode: forwards;
+} */
 @-webkit-keyframes rotate-scale-up {
   0% {
     -webkit-transform: scale(1) rotateZ(0);
