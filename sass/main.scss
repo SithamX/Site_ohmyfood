@@ -255,6 +255,18 @@ $couleur_tertiaire: #99E2D0; */
     }    
 }
 
+@mixin explorer-couleur-hover($colour: $couleur_primaire){
+    @if ( lightness($colour) < 25% ) {
+        $colour: lighten($colour, 10%);
+     }@else{
+        $colour: darken($colour, 10%);
+     }
+}
+
+@mixin test-hover {
+    background-color: lighten($couleur_primaire, 35%);
+}
+
 .boutons-fonctionnement {
     &__div{
     height: 250px;
@@ -279,8 +291,10 @@ $couleur_tertiaire: #99E2D0; */
         transition-timing-function: ease;
     }
     &__bouton:hover {
-        background-color: $couleur_gris_fonce;
-        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
+        /*background-color: $couleur_gris_fonce;*/
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+        /*@include explorer-couleur-hover($couleur_primaire);*/
+        @include test-hover();
     }
     &__numéro {
         margin-left: -10px;
@@ -296,6 +310,9 @@ $couleur_tertiaire: #99E2D0; */
         color: $couleur_gris_logo;
         margin-left: 30px;
         margin-right: 20px;
+    }
+    &__bouton:hover &__icone {
+        color: $couleur_primaire;
     }
 }
 

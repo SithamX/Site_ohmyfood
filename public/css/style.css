@@ -507,8 +507,10 @@ $couleur_tertiaire: #99E2D0; */
   transition-timing-function: ease;
 }
 .boutons-fonctionnement__bouton:hover {
-  background-color: #eaeaea;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+  /*background-color: $couleur_gris_fonce;*/
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  /*@include explorer-couleur-hover($couleur_primaire);*/
+  background-color: #f2eafb;
 }
 .boutons-fonctionnement__numéro {
   margin-left: -10px;
@@ -523,6 +525,9 @@ $couleur_tertiaire: #99E2D0; */
   color: #737373;
   margin-left: 30px;
   margin-right: 20px;
+}
+.boutons-fonctionnement__bouton:hover .boutons-fonctionnement__icone {
+  color: #9356DC;
 }
 
 #section-trois {
