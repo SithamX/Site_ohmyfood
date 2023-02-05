@@ -1,0 +1,47 @@
+@import "./variables.scss";
+
+@mixin texte_gras {
+    font-weight: 400;
+}
+
+@mixin ombre-element {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+}
+
+@mixin degrade-lineaire {
+    background: linear-gradient($couleur_secondaire, $couleur_primaire);
+}
+
+
+
+/* @mixin media-queries-mobile {
+    @media screen and (min-width: map-get($dimension-responsive, mobile)){
+        @content;
+    }
+} */
+
+@mixin media-queries-mobile {
+    @media screen and (min-width: 400px){
+        @content;
+    }
+}
+
+@mixin media-queries-tablette {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin media-queries-tablette-bureau {
+    @media screen and (min-width: 1020px){
+        @content;
+    }
+}
+
+@mixin media-queries-bureau {
+    @media screen and (min-width: 1510px){
+        @content;
+    }
+}
+
+

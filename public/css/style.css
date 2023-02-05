@@ -18,8 +18,14 @@ p {
 
 /* avant il y avait #e6e6e6 */
 /* avant il y avait #f7f7f7 */
+/*$dimension-responsive: (tablette: 768px);
+
+$dimension-responsive: (mobile: 400px); */
 /* avant il y avait #e6e6e6 */
 /* avant il y avait #f7f7f7 */
+/*$dimension-responsive: (tablette: 768px);
+
+$dimension-responsive: (mobile: 400px); */
 /* font-family: 'Shrikhand', cursive; */
 /* font-family: 'Roboto', sans-serif; */
 h1 {
@@ -35,6 +41,16 @@ p {
   font-weight: 300;
 }
 
+/* avant il y avait #e6e6e6 */
+/* avant il y avait #f7f7f7 */
+/*$dimension-responsive: (tablette: 768px);
+
+$dimension-responsive: (mobile: 400px); */
+/* @mixin media-queries-mobile {
+    @media screen and (min-width: map-get($dimension-responsive, mobile)){
+        @content;
+    }
+} */
 .header_pages_restaurants {
   height: 70px;
   padding-top: 10px; /* c'est pour créer un espace en haut plus important qu'en bas comme sur la maquette */
@@ -72,6 +88,12 @@ p {
   margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
   border-radius: 40px 40px 0 0;
   /*border-top: 1px solid $couleur_gris_clair;*/
+}
+@media screen and (min-width: 1020px) {
+  .section-pages-restaurants {
+    width: 950px;
+    margin: auto;
+  }
 }
 
 .titre-pages-restaurants {
@@ -259,6 +281,16 @@ p {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
+/* avant il y avait #e6e6e6 */
+/* avant il y avait #f7f7f7 */
+/*$dimension-responsive: (tablette: 768px);
+
+$dimension-responsive: (mobile: 400px); */
+/* @mixin media-queries-mobile {
+    @media screen and (min-width: map-get($dimension-responsive, mobile)){
+        @content;
+    }
+} */
 @keyframes chargement-fond {
   0% {
     opacity: 1;
@@ -273,51 +305,187 @@ p {
     right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
   }
 }
+@keyframes myAnim {
+  0%, 50%, 100% {
+    transform: scaleY(1);
+  }
+  25%, 75% {
+    transform: scaleY(0.2);
+  }
+}
 .page-chargement {
   position: fixed; /* ça permet de rendre le logo dans la div centré même si je fais défiler la page */
   background-color: #eaeaea;
   width: 100%;
   height: 100%;
-  animation: chargement-fond 20s;
+  animation: chargement-fond 30s; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
   animation-fill-mode: forwards;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
 }
-.page-chargement__texte {
+.page-chargement__titre-div {
   padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
   font-family: "Shrikhand", cursive;
   font-size: 3em;
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: rotate-scale-up 0.65s linear both;
+  /*-webkit-animation: rotate-scale-up 0.65s linear both;
   animation: rotate-scale-up 0.65s linear both;
-  opacity: 1;
-}
-.page-chargement__texte span:nth-child(1) {
+     opacity: 1;*/
+  /*width: 260px; /* oh 53px ; my 134px ; food 260px*/
+  animation: myAnim-2 2s infinite normal forwards; /* j'ai mis "infinite en nombre de répétition pour que ce soit cohérent avec la volonté de créer un loader qui soit adapté à la vitese de connexion de l'utilisateur, donc là dans mon cas, comme le loader n'est pas géré par du javascript, il suffit de déterminer une durée d'affichage pour la div page-chargement et tou les élément à l'intérérieur d'adapteront en durée */
+  position: absolute;
   opacity: 0;
-  animation: texte-un 6s;
+  animation-delay: 2.5s;
+  /*span:nth-child(1) {
+      opacity: 0;
+      animation: texte-un 6s;
+  }*/
+}
+.page-chargement__partie-une {
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
-@keyframes texte-un {
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px; /* si je mets par exemple 4px ça crée des points qui dournent */
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2;
+  border-color: #FF79DA transparent transparent;
+  /*border-image: linear-gradient(#9356DC, #FF79DA);*/
+  right: -3000px;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
   0% {
-    opacity: 0;
+    right: 0;
+    transform: rotate(0deg);
   }
-  25% {
+  100% {
+    right: 0;
+    transform: rotate(360deg);
+  }
+}
+@keyframes myAnim-2 {
+  0% {
+    opacity: 1;
+    opacity: 0; /* avant il y avait 1. mettre deux opacity ça fonctionne*/
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.page-chargement__titre {
+  animation: titre-chargement 1s;
+  opacity: 1;
+}
+
+@keyframes titre-chargement {
+  0% {
     opacity: 1;
   }
   50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
     opacity: 0;
   }
 }
+@keyframes titre-fondu {
+  0% {
+    width: 53px;
+  }
+  30% {
+    width: 134px;
+  }
+  50% {
+    width: 260px;
+  }
+}
+@keyframes titre-clignotant {
+  /*0% {
+      opacity: 0;
+  }
+  30% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }*/
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes titre-fondu-2 {
+  0% {
+    width: 53px;
+  }
+  20% {
+    width: 134px;
+  }
+  40% {
+    width: 260px;
+  }
+  50% {
+    width: 53px;
+  }
+  70% {
+    width: 134px;
+  }
+  90% {
+    width: 260px;
+  }
+}
+/*@keyframes texte-un {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}*/
 /* .main-page-principale {
     animation: cards_arrière_plan 7s;
     animation-fill-mode: forwards;
@@ -386,6 +554,17 @@ $couleur_gris_logo: #737373;
 $couleur_primaire: #9356DC;
 $couleur_secondaire: #FF79DA;
 $couleur_tertiaire: #99E2D0; */
+/*@mixin texte_gras {
+    font-weight: 400;
+}
+
+@mixin ombre-element {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);       Je les ai ajouté dans le fichier scss mixins
+}
+
+@mixin degrade-lineaire {
+    background: linear-gradient($couleur_secondaire, $couleur_primaire);
+}*/
 .header_page_principale {
   height: 70px;
   padding-top: 10px; /* c'est pour créer un espace en haut plus important qu'en bas comme sur la maquette */
@@ -478,6 +657,11 @@ $couleur_tertiaire: #99E2D0; */
   padding-bottom: 50px;
   padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
 }
+@media screen and (min-width: 400px) {
+  #section-deux {
+    padding-bottom: 10px;
+  }
+}
 #section-deux h2 {
   margin-left: 12px;
   margin-top: 0;
@@ -485,11 +669,29 @@ $couleur_tertiaire: #99E2D0; */
 }
 
 .boutons-fonctionnement__div {
+  /*border: 1px solid black;*/
   height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (min-width: 400px) {
+  .boutons-fonctionnement__div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 12px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .boutons-fonctionnement__div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 .boutons-fonctionnement a {
   text-decoration: none;
@@ -501,10 +703,25 @@ $couleur_tertiaire: #99E2D0; */
   background-color: #f6f6f6;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   width: 90%;
+  max-width: 340px;
   border-radius: 20px;
   height: 65px;
   transition-duration: 300ms;
   transition-timing-function: ease;
+  /*@include media-queries-mobile {
+      margin-right: 50px;
+  }*/
+}
+@media screen and (min-width: 400px) {
+  .boutons-fonctionnement__bouton {
+    margin-right: 40px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .boutons-fonctionnement__bouton {
+    width: 350px;
+  }
 }
 .boutons-fonctionnement__bouton:hover {
   /*background-color: $couleur_gris_fonce;*/
@@ -546,6 +763,15 @@ $couleur_tertiaire: #99E2D0; */
   justify-content: space-around;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .cards-restaurants__div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+  }
+}
 .cards-restaurants__card {
   background-color: #ffffff;
   width: 90%;
@@ -555,6 +781,18 @@ $couleur_tertiaire: #99E2D0; */
   text-decoration: none;
   position: relative;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 1020px) {
+  .cards-restaurants__card {
+    width: 450px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1510px) {
+  .cards-restaurants__card:nth-child(4) {
+    width: 92%;
+  }
 }
 .cards-restaurants__image {
   width: 100%;

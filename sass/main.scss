@@ -1,6 +1,8 @@
 @import "./polices.scss";
 @import "./variables.scss";
 @import "./page_deux.scss";
+@import "./mixins.scss";
+
 
 @keyframes chargement-fond {
     0% {
@@ -14,7 +16,20 @@
         /*position: relative;*/
         /*display: none;*/
         right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
-    }
+    }   
+}               
+
+@keyframes myAnim {
+	0%,
+	50%,
+	100% {
+		transform: scaleY(1.0);
+	}
+
+	25%,
+	75% {
+		transform: scaleY(0.2);
+	}
 }
 
 
@@ -23,32 +38,171 @@
     background-color: $couleur_gris_fonce;
     width: 100%;
     height: 100%;
-    animation: chargement-fond 20s;
+    animation: chargement-fond 30s; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
     animation-fill-mode: forwards;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
-    &__texte {
+    &__titre-div {
         padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
         font-family: 'Shrikhand', cursive;
         font-size: 3em;
         background: linear-gradient(#9356DC, #FF79DA);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -webkit-animation: rotate-scale-up 0.65s linear both;
+        /*-webkit-animation: rotate-scale-up 0.65s linear both;
 	    animation: rotate-scale-up 0.65s linear both;
-        opacity: 1;
-        span:nth-child(1) {
+        opacity: 1;*/
+
+        /*width: 260px; /* oh 53px ; my 134px ; food 260px*/
+
+        //animation: titre-fondu 2s 2;
+        //animation: titre-fondu-2 5s;
+        animation: myAnim-2 2s infinite normal forwards; /* j'ai mis "infinite en nombre de répétition pour que ce soit cohérent avec la volonté de créer un loader qui soit adapté à la vitese de connexion de l'utilisateur, donc là dans mon cas, comme le loader n'est pas géré par du javascript, il suffit de déterminer une durée d'affichage pour la div page-chargement et tou les élément à l'intérérieur d'adapteront en durée */
+        position: absolute;
+        opacity: 0;
+        animation-delay: 2.5s;
+        /*span:nth-child(1) {
             opacity: 0;
             animation: texte-un 6s;
-        }
+        }*/
     }
+    &__partie-une {
+        animation: myAnim 2s ease 0s 1 normal forwards;
+       
+    }
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;  
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px; /* si je mets par exemple 4px ça crée des points qui dournent */
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2;
+  border-color: $couleur_secondaire transparent transparent;
+  /*border-image: linear-gradient(#9356DC, #FF79DA);*/
+  right: -3000px;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    right: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    right: 0;
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes myAnim-2 {
+	0% {
+        opacity: 1;
+		opacity: 0; /* avant il y avait 1. mettre deux opacity ça fonctionne*/
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.page-chargement__titre {
+    animation: titre-chargement 1s;
+    opacity: 1;
+}
+
+@keyframes titre-chargement {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes titre-fondu {
+    0% {
+        width: 53px;
+    }
+    30% {
+        width: 134px;
+    }
+    50% {
+        width: 260px;
+    }
+}
+
+@keyframes titre-clignotant {
+    /*0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }*/
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes titre-fondu-2 {
+    0% {
+        width: 53px;
+    }
+    20% {
+        width: 134px;
+    }
+    40% {
+        width: 260px;
+    }
+    50% {
+        width: 53px;
+    }
+    70% {
+        width: 134px;
+    }
+    90% {
+        width: 260px;
+    }
+    
 }
 
 
 
-@keyframes texte-un {
+
+/*@keyframes texte-un {
     0% {
         opacity: 0;
     }
@@ -64,7 +218,7 @@
     100% {
         opacity: 0;
     }
-}
+}*/
 
 
 /* .main-page-principale {
@@ -143,17 +297,17 @@ $couleur_tertiaire: #99E2D0; */
 
 
 
-@mixin texte_gras {
+/*@mixin texte_gras {
     font-weight: 400;
 }
 
 @mixin ombre-element {
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);       Je les ai ajouté dans le fichier scss mixins
 }
 
 @mixin degrade-lineaire {
     background: linear-gradient($couleur_secondaire, $couleur_primaire);
-}
+}*/ 
 
 .header_page_principale {
     height: 70px;
@@ -248,6 +402,9 @@ $couleur_tertiaire: #99E2D0; */
 #section-deux {
     padding-bottom: 50px;
     padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */ 
+    @include media-queries-mobile {
+        padding-bottom: 10px;
+    }
     h2 {
         margin-left: 12px;
         margin-top: 0;
@@ -269,11 +426,25 @@ $couleur_tertiaire: #99E2D0; */
 
 .boutons-fonctionnement {
     &__div{
+    /*border: 1px solid black;*/
     height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;       
+    align-items: center;  
+    @include media-queries-mobile {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 12px;
+        height: auto;
+    }
+    @include media-queries-tablette {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }     
     }
     a {
         text-decoration: none;
@@ -285,16 +456,27 @@ $couleur_tertiaire: #99E2D0; */
         background-color: $couleur_gris_clair;
         @include ombre-element;
         width: 90%;
+        max-width: 340px;
         border-radius: 20px;
         height: 65px;
         transition-duration: 300ms;
         transition-timing-function: ease;
+        /*@include media-queries-mobile {
+            margin-right: 50px;
+        }*/
+        @include media-queries-mobile {
+            margin-right: 40px;
+            margin-bottom: 30px;
+        }
+        @include media-queries-tablette {
+            width: 350px;
+        }
     }
     &__bouton:hover {
         /*background-color: $couleur_gris_fonce;*/
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
         /*@include explorer-couleur-hover($couleur_primaire);*/
-        @include test-hover();
+        @include test-hover;
     }
     &__numéro {
         margin-left: -10px;
@@ -333,6 +515,13 @@ $couleur_tertiaire: #99E2D0; */
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    @include media-queries-tablette {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        height: auto;
+    }
     }
     &__card {
         background-color: #ffffff;
@@ -343,6 +532,16 @@ $couleur_tertiaire: #99E2D0; */
         text-decoration: none;
         position: relative;
         @include ombre-element;
+        @include media-queries-tablette-bureau {
+            width: 450px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+        }
+    }
+    &__card:nth-child(4) {
+        @include media-queries-bureau {
+            width: 92%;
+        }
     }
     &__image {
         width: 100%;

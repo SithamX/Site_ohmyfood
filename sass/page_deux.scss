@@ -1,5 +1,6 @@
 @import "./variables.scss";
 @import "./polices.scss";
+@import "./mixins.scss";
 
 .header_pages_restaurants {
     height: 70px;
@@ -40,6 +41,10 @@
     margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
     border-radius: 40px 40px 0 0;
     /*border-top: 1px solid $couleur_gris_clair;*/
+    @include media-queries-tablette-bureau {
+        width: 950px;
+        margin: auto;
+    }
 }
 
 .titre-pages-restaurants {
