@@ -120,8 +120,12 @@
     overflow: hidden;
     /*transition: transform 400ms;*/
     /*cursor: pointer;*/
-    animation: chargement-boutons-pages-restaurants 700ms forwards;
+    animation: chargement-boutons-pages-restaurants 800ms forwards;
     opacity: 0;
+    }
+    &__bouton:not(:last-child){
+        animation: chargement-boutons-pages-restaurants-marges 800ms forwards;
+        opacity: 0;
     }
     /*&__bouton:hover {
         transform: scale(1.15);
@@ -214,11 +218,22 @@
 @keyframes chargement-boutons-pages-restaurants {
     from {
         opacity: 0;
-        transform: scaleY(0.9);
+     
     }  
     to {
         opacity: 1;
-        transform: scaleY(1);
+      
+    }
+}  
+
+@keyframes chargement-boutons-pages-restaurants-marges {
+    from {
+        opacity: 0;
+        margin-bottom: 25px;
+    }  
+    to {
+        margin-bottom: 12px;
+        opacity: 1;
     }
 }  
 
