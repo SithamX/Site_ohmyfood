@@ -45,9 +45,17 @@
     border-radius: 40px 40px 0 0;
     /*border-top: 1px solid $couleur_gris_clair;*/
     @include media-queries-tablette-bureau {
-        width: 950px;
+        max-width: 1200px;
         margin: auto;
     }
+}
+
+.div-articles-pages-restaurants {
+    @include media-queries-tablette-bureau {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }  
 }
 
 .titre-pages-restaurants {
@@ -98,17 +106,26 @@
         /*text-decoration: underline 3px green;
         text-underline-offset: 8px;
         margin-bottom: 20px;*/
+        @include media-queries-tablette-bureau {
+            padding-left: 0;
+        }
     }
     .h2_souligne {
         margin: 5px 0 13px 15px;
         width: 40px;
         border-top: 3px solid $couleur_tertiaire;
+        @include media-queries-tablette-bureau {
+            margin-left: 0;
+        }
     }
 }
 
 .boutons-pages-restaurants {
     display: flex;
     flex-direction: column;
+    @include media-queries-tablette-bureau {
+        width: 312px;
+    }
     &__bouton {
     background-color: #ffffff;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
@@ -125,6 +142,9 @@
     /*cursor: pointer;*/
     animation: chargement-boutons-pages-restaurants 750ms forwards;
     opacity: 0;
+    @include media-queries-tablette-bureau {
+        width: 100%;
+    }
     }
     /*&__bouton:hover {
         transform: scale(1.15);
@@ -217,11 +237,11 @@
 @keyframes chargement-boutons-pages-restaurants {
     from {
         opacity: 0;
-        margin-bottom: 25px;
+        transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
     }  
     to {
         opacity: 1;
-        margin-bottom: 12px;
+        transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
     }
 }  
 
@@ -300,6 +320,9 @@
     opacity: 1;
     transition-duration: 300ms;
     transition-timing-function: ease;
+    @include media-queries-tablette-bureau {
+        margin-top: 0;
+    }
     p {
         color: #ffffff;
         font-weight: 500;

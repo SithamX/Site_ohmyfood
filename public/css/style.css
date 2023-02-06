@@ -96,8 +96,16 @@ $dimension-responsive: (mobile: 400px); */
 }
 @media screen and (min-width: 1020px) {
   .section-pages-restaurants {
-    width: 950px;
+    max-width: 1200px;
     margin: auto;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .div-articles-pages-restaurants {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
   }
 }
 
@@ -150,10 +158,20 @@ $dimension-responsive: (mobile: 400px); */
   text-underline-offset: 8px;
   margin-bottom: 20px;*/
 }
+@media screen and (min-width: 1020px) {
+  .articles-pages-restaurants h2 {
+    padding-left: 0;
+  }
+}
 .articles-pages-restaurants .h2_souligne {
   margin: 5px 0 13px 15px;
   width: 40px;
   border-top: 3px solid #99E2D0;
+}
+@media screen and (min-width: 1020px) {
+  .articles-pages-restaurants .h2_souligne {
+    margin-left: 0;
+  }
 }
 
 .boutons-pages-restaurants {
@@ -167,6 +185,11 @@ $dimension-responsive: (mobile: 400px); */
   /* display: flex;
    transform: scaleX(1);
    }*/
+}
+@media screen and (min-width: 1020px) {
+  .boutons-pages-restaurants {
+    width: 312px;
+  }
 }
 .boutons-pages-restaurants__bouton {
   background-color: #ffffff;
@@ -184,6 +207,11 @@ $dimension-responsive: (mobile: 400px); */
   /*cursor: pointer;*/
   animation: chargement-boutons-pages-restaurants 750ms forwards;
   opacity: 0;
+}
+@media screen and (min-width: 1020px) {
+  .boutons-pages-restaurants__bouton {
+    width: 100%;
+  }
 }
 .boutons-pages-restaurants h3 {
   font-size: 1.1em;
@@ -266,11 +294,11 @@ $dimension-responsive: (mobile: 400px); */
 @keyframes chargement-boutons-pages-restaurants {
   from {
     opacity: 0;
-    margin-bottom: 25px;
+    transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
   }
   to {
     opacity: 1;
-    margin-bottom: 12px;
+    transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
   }
 }
 /*@keyframes chargement-boutons-pages-restaurants {
@@ -349,6 +377,11 @@ $dimension-responsive: (mobile: 400px); */
   opacity: 1;
   transition-duration: 300ms;
   transition-timing-function: ease;
+}
+@media screen and (min-width: 1020px) {
+  #bouton_commander {
+    margin-top: 0;
+  }
 }
 #bouton_commander p {
   color: #ffffff;
