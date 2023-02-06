@@ -111,17 +111,9 @@
         opacity: 0.9;
     }
     100% {
-        opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
-        /*position: relative;*/
-        /*display: none;*/
-        right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
+        opacity: 0; 
     }   
 }  
-
-.boutons-pages-restaurants {
-    animation: chargement-boutons-pages-restaurants 1s; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-    animation-fill-mode: forwards; /* est-ce utile ? */
-}
 
 .boutons-pages-restaurants {
     display: flex;
@@ -229,6 +221,23 @@
     }*/
 }
 
+.boutons-pages-restaurants__1 {
+    .boutons-pages-restaurants__bouton:nth-child(1) {
+        animation: chargement-boutons-pages-restaurants 1s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+        animation-fill-mode: forwards; /* est-ce utile ? */
+        animation-delay: 1s;
+    }
+    .boutons-pages-restaurants__bouton:nth-child(2) {
+        animation: chargement-boutons-pages-restaurants 1s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+        animation-fill-mode: forwards; /* est-ce utile ? */
+        animation-delay: 1.2s;
+    }
+    .boutons-pages-restaurants__bouton:nth-child(3) {
+        animation: chargement-boutons-pages-restaurants 1s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+        animation-fill-mode: forwards; /* est-ce utile ? */
+        animation-delay: 1.5s;
+    }
+}
 
 
 #bouton_commander {
