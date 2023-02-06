@@ -151,17 +151,6 @@ $dimension-responsive: (mobile: 400px); */
   border-top: 3px solid #99E2D0;
 }
 
-@keyframes chargement-boutons-pages-restaurants {
-  0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .boutons-pages-restaurants {
   display: flex;
   flex-direction: column;
@@ -188,6 +177,8 @@ $dimension-responsive: (mobile: 400px); */
   overflow: hidden;
   /*transition: transform 400ms;*/
   /*cursor: pointer;*/
+  animation: chargement-boutons-pages-restaurants 700ms forwards;
+  opacity: 0;
 }
 .boutons-pages-restaurants h3 {
   font-size: 1.1em;
@@ -267,20 +258,75 @@ $dimension-responsive: (mobile: 400px); */
   transform: rotate(270deg);
 }
 
-.boutons-pages-restaurants__1 .boutons-pages-restaurants__bouton:nth-child(1) {
-  animation: chargement-boutons-pages-restaurants 1s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-  animation-fill-mode: forwards; /* est-ce utile ? */
-  animation-delay: 1s;
+@keyframes chargement-boutons-pages-restaurants {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
-.boutons-pages-restaurants__1 .boutons-pages-restaurants__bouton:nth-child(2) {
-  animation: chargement-boutons-pages-restaurants 1s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-  animation-fill-mode: forwards; /* est-ce utile ? */
-  animation-delay: 1.2s;
+/*@keyframes chargement-boutons-pages-restaurants {
+    0% {
+        transform: scaleY(0.5);
+
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}*/
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
-.boutons-pages-restaurants__1 .boutons-pages-restaurants__bouton:nth-child(3) {
-  animation: chargement-boutons-pages-restaurants 1s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-  animation-fill-mode: forwards; /* est-ce utile ? */
-  animation-delay: 1.5s;
+.boutons-pages-restaurants__bouton_plat {
+  animation-delay: 8s;
+}
+
+.boutons-pages-restaurants__bouton--1 {
+  animation-delay: 100ms;
+}
+
+.boutons-pages-restaurants__bouton--2 {
+  animation-delay: 200ms;
+}
+
+.boutons-pages-restaurants__bouton--3 {
+  animation-delay: 300ms;
+}
+
+.boutons-pages-restaurants__bouton--4 {
+  animation-delay: 400ms;
+}
+
+.boutons-pages-restaurants__bouton--5 {
+  animation-delay: 500ms;
+}
+
+.boutons-pages-restaurants__bouton--6 {
+  animation-delay: 600ms;
+}
+
+.boutons-pages-restaurants__bouton--7 {
+  animation-delay: 700ms;
+}
+
+.boutons-pages-restaurants__bouton--8 {
+  animation-delay: 800ms;
+}
+
+.boutons-pages-restaurants__bouton--9 {
+  animation-delay: 900ms;
+}
+
+.boutons-pages-restaurants__bouton--10 {
+  animation-delay: 1000ms;
 }
 
 #bouton_commander {
