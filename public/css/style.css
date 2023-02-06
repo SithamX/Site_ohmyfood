@@ -151,6 +151,25 @@ $dimension-responsive: (mobile: 400px); */
   border-top: 3px solid #99E2D0;
 }
 
+@keyframes chargement-boutons-pages-restaurants {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
+    /*position: relative;*/
+    /*display: none;*/
+    right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
+  }
+}
+.boutons-pages-restaurants {
+  animation: chargement-boutons-pages-restaurants 1s; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+  animation-fill-mode: forwards; /* est-ce utile ? */
+}
+
 .boutons-pages-restaurants {
   display: flex;
   flex-direction: column;
@@ -318,8 +337,8 @@ $dimension-responsive: (mobile: 400px); */
   background-color: #eaeaea;
   width: 100%;
   height: 100%;
-  animation: chargement-fond 30s; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-  animation-fill-mode: forwards;
+  animation: chargement-fond 13s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+  animation-fill-mode: forwards; /* est-ce utile ? */
   display: flex;
   justify-content: center;
   align-items: center;

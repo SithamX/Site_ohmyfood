@@ -38,8 +38,8 @@
     background-color: $couleur_gris_fonce;
     width: 100%;
     height: 100%;
-    animation: chargement-fond 30s; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-    animation-fill-mode: forwards;
+    animation: chargement-fond 13s linear; /* avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+    animation-fill-mode: forwards; /* est-ce utile ? */
     display: flex;
     justify-content: center;
     align-items: center;
