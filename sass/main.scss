@@ -12,7 +12,7 @@
         opacity: 0.9;
     }
     100% {
-        opacity: 0.8;
+        opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
         /*position: relative;*/
         /*display: none;*/
         right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
