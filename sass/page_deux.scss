@@ -1,6 +1,7 @@
-@import "./variables.scss";
-@import "./polices.scss";
-@import "./mixins.scss";
+@import "./utils/variables";
+@import "./base/polices";
+@import "./utils/mixins";
+
 
 .header_pages_restaurants {
     height: 70px;

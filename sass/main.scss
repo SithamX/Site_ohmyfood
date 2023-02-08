@@ -1,8 +1,8 @@
-@import "./polices.scss";
-@import "./variables.scss";
+@import "./base/polices";
+@import "./utils/variables";
 @import "./page_deux.scss";
-@import "./mixins.scss";
-
+@import "./utils/mixins";
+@import "./layouts/headers";
 
 @keyframes chargement-fond {
     0% {
