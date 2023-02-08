@@ -401,12 +401,13 @@ $dimension-responsive: (mobile: 400px); */
 }
 .cards-restaurants__nouveau {
   position: absolute; /* j'ai trouvé comment faire ici : https://www.w3schools.com/howto/howto_css_image_text.asp */
-  top: -3px;
-  right: 20px;
-  background-color: #ccffdd;
-  color: #00b36b;
+  top: 1px;
+  right: 12px;
+  background-color: #99E2D0;
+  color: #278870;
   font-weight: 500;
-  padding: 8px;
+  font-size: 0.84em;
+  padding: 5px 12px;
   border-radius: 3px;
 }
 

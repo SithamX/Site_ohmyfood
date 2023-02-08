@@ -12,6 +12,10 @@
     background: linear-gradient($couleur_secondaire, $couleur_primaire);
 }
 
+@mixin test-hover {
+    background-color: lighten($couleur_primaire, 35%);
+}
+
 
 
 /* @mixin media-queries-mobile {
