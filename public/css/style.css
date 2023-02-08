@@ -78,7 +78,7 @@ $dimension-responsive: (mobile: 400px); */
   background-color: #eaeaea;
   width: 100%;
   height: 100%;
-  animation: chargement-fond 13s linear; /* avanr il y avait 13s avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+  animation: chargement-fond 1s linear; /* avanr il y avait 13s avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
   animation-fill-mode: forwards; /* est-ce utile ? */
   display: flex;
   justify-content: center;
@@ -169,7 +169,7 @@ $dimension-responsive: (mobile: 400px); */
 }
 
 .header_page_principale {
-  height: 70px;
+  height: 55px;
   padding-top: 10px; /* c'est pour créer un espace en haut plus important qu'en bas comme sur la maquette */
   display: flex;
   justify-content: center;
@@ -180,12 +180,12 @@ $dimension-responsive: (mobile: 400px); */
   font-size: 0; /* grâe à l'inspecteur d'éléments j'ai pu voir qu'il y avait bizzarement un font-size qui créait un léger espacement en bas du logo, donc en le mettant sur zero, cela résoud le problème */
 }
 .header_page_principale img {
-  width: 160px;
+  width: 165px;
   /*border: 1px solid black;*/
 }
 
 .header_pages_restaurants {
-  height: 70px;
+  height: 55px;
   padding-top: 10px; /* c'est pour créer un espace en haut plus important qu'en bas comme sur la maquette */
   display: flex;
   justify-content: center;
@@ -197,13 +197,13 @@ $dimension-responsive: (mobile: 400px); */
 .header_pages_restaurants i {
   position: absolute;
   left: 0px;
-  top: 35px;
+  top: 25px;
   margin-left: 30px;
   font-size: 1.3em;
   color: #000000;
 }
 .header_pages_restaurants img {
-  width: 160px;
+  width: 165px;
   /*border: 1px solid black;*/
 }
 
