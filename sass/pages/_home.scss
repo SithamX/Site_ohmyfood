@@ -1,0 +1,257 @@
+#section-une-page-un {
+    text-align: center;
+    padding-bottom: 50px;
+    background-color: $couleur_gris_clair;
+    h1 {
+        margin: auto; /* pour centrer le texte */
+        /*display: flex;
+        justify-content: center;*/
+        margin-top: 40px;
+        width: 70%;
+        padding-bottom: 15px;
+    }
+    p {
+        margin: auto; /* pour centrer le texte */
+        display: flex;
+        width: 85%;
+        justify-content: center;
+    }
+}
+
+#bouton-explorer {
+    text-decoration: none;
+    margin: auto;
+    margin-top: 30px;
+    width: 230px;
+    height: 50px;
+    @include degrade-lineaire;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include ombre-element;
+    opacity: 1;
+    transition-timing-function: ease;
+    transition-duration: 300ms; /* Si je le mets là la page subit un leger decalage vers le bas puis le haut lorsque l'on la raffraichit, et si je le mets dans le :hover ça ne le fait plus, or, il n'y à plus de transition lorsque le bouton revient a son opacité d'origine, c'est trop brutal, donc je vais demander l'avis du mentor */
+    p {
+        color: #ffffff;
+        font-weight: 500;
+    }
+    &:hover {
+        opacity: 0.9;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
+    }
+}
+
+
+#section-deux-page-un {
+    padding-bottom: 50px;
+    padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */ 
+    @include media-queries-mobile {
+        padding-bottom: 10px;
+    }
+    h2 {
+        margin-left: 12px;
+        margin-top: 0;
+        padding-top: 25px;
+    }    
+}
+
+@mixin explorer-couleur-hover($colour: $couleur_primaire){
+    @if ( lightness($colour) < 25% ) {
+        $colour: lighten($colour, 10%);
+     }@else{
+        $colour: darken($colour, 10%);
+     }
+}
+
+@mixin test-hover {
+    background-color: lighten($couleur_primaire, 35%);
+}
+
+.boutons-fonctionnement {
+    &__div{
+    /*border: 1px solid black;*/
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+    @include media-queries-mobile {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 12px;
+        height: auto;
+    }
+    @include media-queries-tablette {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }     
+    }
+    a {
+        text-decoration: none;
+        color: #000000;
+    }  
+    &__bouton {
+        display: flex;
+        align-items: center;
+        background-color: $couleur_gris_clair;
+        @include ombre-element;
+        width: 90%;
+        max-width: 340px;
+        border-radius: 20px;
+        height: 65px;
+        transition-duration: 300ms;
+        transition-timing-function: ease;
+        /*@include media-queries-mobile {
+            margin-right: 50px;
+        }*/
+        @include media-queries-mobile {
+            margin-right: 40px;
+            margin-bottom: 30px;
+        }
+        @include media-queries-tablette {
+            width: 350px;
+        }
+    }
+    &__bouton:hover {
+        /*background-color: $couleur_gris_fonce;*/
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+        /*@include explorer-couleur-hover($couleur_primaire);*/
+        @include test-hover;
+    }
+    &__numéro {
+        margin-left: -10px;
+        background-color: $couleur_primaire;
+        padding: 2px 7px;
+        border-radius: 50px;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+    &__icone
+    {
+        color: $couleur_gris_logo;
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+    &__bouton:hover &__icone {
+        color: $couleur_primaire;
+    }
+}
+
+
+#section-trois-page-un {
+    background-color: $couleur_gris_clair;
+    padding-bottom: 40px;
+    h2 {
+        margin-left: 20px;
+        padding-top: 50px; 
+        margin-top: 0;
+    }
+}
+
+.cards-restaurants {
+    &__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @include media-queries-tablette {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        height: auto;
+    }
+    }
+    &__card {
+        background-color: #ffffff;
+        width: 90%;
+        height: 210px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        position: relative;
+        @include ombre-element;
+        @include media-queries-tablette-bureau {
+            width: 450px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+        }
+    }
+    &__card:nth-child(4) {
+        @include media-queries-bureau {
+            width: 92%;
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    &__nouveau {
+        position: absolute; /* j'ai trouvé comment faire ici : https://www.w3schools.com/howto/howto_css_image_text.asp */
+        top: -3px;
+        right: 20px;
+        background-color: #ccffdd;
+        color: #00b36b;
+        font-weight: 500;
+        padding: 8px;
+        border-radius: 3px;
+    }
+}
+
+.card-restaurant-informations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        color: black;
+        margin: 5px 10px;
+    }
+    p {
+        color: black;
+        margin: 5px 10px;
+    }
+    &__icone {
+        color: red; /*linear-gradient(90deg, $couleur_primaire, $couleur_secondaire) */
+        margin-right: 20px;
+        font-size: 1.5em;
+    }
+    /*i:hover {
+        background: linear-gradient($couleur_secondaire, $couleur_primaire);
+    }*/
+    &__icone-vide {
+        font-size: 1.5em;
+        margin-right: 20px;
+        color: black;
+        opacity: 1;
+        transition: all 0.3s ease-in;
+    }
+    &__icone-remplie {
+        font-size: 1.5em;
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transition: all 0.3s ease-in;
+        text-decoration: none;
+        color: transparent;
+        background-clip: text;
+        background: linear-gradient(#9356DC, #FF79DA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__div-favoris:hover &__icone-remplie {
+        opacity: 1;
+    }
+    &__div-favoris:hover &__icone-vide {
+        opacity: 0;
+    }
+}
+
+
