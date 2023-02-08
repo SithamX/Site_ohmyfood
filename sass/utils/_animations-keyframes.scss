@@ -1,0 +1,43 @@
+@keyframes chargement-fond {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
+        /*position: relative;*/
+        /*display: none;*/
+        right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
+    }   
+} 
+
+@keyframes lds-ring {
+    0% {
+      right: 0;
+      transform: rotate(0deg);
+    }
+    100% {
+      right: 0;
+      transform: rotate(360deg);
+    }
+}
+  
+  
+@keyframes myAnim-2 {
+    0% {
+        opacity: 1;
+        opacity: 0; /* avant il y avait 1. mettre deux opacity ça fonctionne*/
+    }
+  
+    50% {
+        opacity: 0.2;
+    }
+  
+    100% {
+        opacity: 1;
+    }
+}
+
+

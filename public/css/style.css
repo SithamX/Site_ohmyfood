@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -34,359 +32,117 @@ $dimension-responsive: (mobile: 400px); */
 /*$dimension-responsive: (tablette: 768px);
 
 $dimension-responsive: (mobile: 400px); */
-/* font-family: 'Shrikhand', cursive; */
-/* font-family: 'Roboto', sans-serif; */
-h1 {
-  font-size: 1.5em; /* même taille que celle de base*/
-}
-
-h3 {
-  font-weight: 700;
-  font-size: 1em;
-}
-
-p {
-  font-weight: 300;
-}
-
-/* avant il y avait #e6e6e6 */
-/* avant il y avait #f7f7f7 */
-/*$dimension-responsive: (tablette: 768px);
-
-$dimension-responsive: (mobile: 400px); */
 /* @mixin media-queries-mobile {
     @media screen and (min-width: map-get($dimension-responsive, mobile)){
         @content;
     }
 } */
-.section_img img {
+@keyframes chargement-fond {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
+    /*position: relative;*/
+    /*display: none;*/
+    right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
+  }
+}
+@keyframes lds-ring {
+  0% {
+    right: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    right: 0;
+    transform: rotate(360deg);
+  }
+}
+@keyframes myAnim-2 {
+  0% {
+    opacity: 1;
+    opacity: 0; /* avant il y avait 1. mettre deux opacity ça fonctionne*/
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.page-chargement {
+  position: fixed; /* ça permet de rendre le logo dans la div centré même si je fais défiler la page */
+  background-color: #eaeaea;
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-@media screen and (min-width: 1020px) {
-  .section_img img {
-    height: 300px;
-  }
-}
-
-.section-pages-restaurants {
-  background-color: #f6f6f6;
-  padding-bottom: 30px;
-  position: relative;
-  top: -40px;
-  margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
-  border-radius: 40px 40px 0 0;
-  /*border-top: 1px solid $couleur_gris_clair;*/
-}
-@media screen and (min-width: 1020px) {
-  .section-pages-restaurants {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-
-@media screen and (min-width: 1020px) {
-  .div-articles-pages-restaurants {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
-  }
-}
-
-.titre-pages-restaurants {
+  height: 100%;
+  animation: chargement-fond 13s linear; /* avanr il y avait 13s avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+  animation-fill-mode: forwards; /* est-ce utile ? */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
 }
-.titre-pages-restaurants h1 {
+.page-chargement__titre-div {
+  padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
   font-family: "Shrikhand", cursive;
-  font-weight: normal;
-  margin-left: 15px;
-}
-.titre-pages-restaurants__icone-vide {
-  font-size: 1.5em;
-  margin-right: 40px;
-  color: black;
-  opacity: 1;
-  transition: all 0.3s ease-in;
-}
-.titre-pages-restaurants__icone-remplie {
-  font-size: 1.5em;
-  position: absolute;
-  right: 40px;
-  opacity: 0;
-  transition: all 0.3s ease-in;
-  text-decoration: none;
-  color: transparent;
-  background-clip: text;
+  font-size: 3em;
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-remplie {
-  opacity: 1;
-}
-.titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-vide {
+  /*-webkit-animation: rotate-scale-up 0.65s linear both;
+  animation: rotate-scale-up 0.65s linear both;
+     opacity: 1;*/
+  /*width: 260px; /* oh 53px ; my 134px ; food 260px*/
+  animation: myAnim-2 2s infinite normal forwards; /* j'ai mis "infinite en nombre de répétition pour que ce soit cohérent avec la volonté de créer un loader qui soit adapté à la vitese de connexion de l'utilisateur, donc là dans mon cas, comme le loader n'est pas géré par du javascript, il suffit de déterminer une durée d'affichage pour la div page-chargement et tou les élément à l'intérérieur d'adapteront en durée */
+  position: absolute;
   opacity: 0;
-}
-
-.articles-pages-restaurants {
-  margin-bottom: 30px;
-}
-.articles-pages-restaurants h2 {
-  font-weight: 300;
-  font-size: 1em;
-  padding-left: 15px;
-  margin: 0;
-  /*text-decoration: underline 3px green;
-  text-underline-offset: 8px;
-  margin-bottom: 20px;*/
-}
-@media screen and (min-width: 1020px) {
-  .articles-pages-restaurants h2 {
-    padding-left: 0;
-  }
-}
-.articles-pages-restaurants .h2_souligne {
-  margin: 5px 0 13px 15px;
-  width: 40px;
-  border-top: 3px solid #99E2D0;
-}
-@media screen and (min-width: 1020px) {
-  .articles-pages-restaurants .h2_souligne {
-    margin-left: 0;
-  }
-}
-
-.boutons-pages-restaurants {
-  display: flex;
-  flex-direction: column;
-  /*&__bouton:hover {
-      transform: scale(1.15);
+  animation-delay: 2.5s;
+  /*span:nth-child(1) {
+      opacity: 0;
+      animation: texte-un 6s;
   }*/
-  /*&__remplissage-droite:hover {
-  /*display: none;*/
-  /* display: flex;
-   transform: scaleX(1);
-   }*/
 }
-@media screen and (min-width: 1020px) {
-  .boutons-pages-restaurants {
-    width: 312px;
-  }
+.page-chargement__partie-une {
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
-.boutons-pages-restaurants__bouton {
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-  width: 90%;
-  border-radius: 15px;
-  margin: auto;
-  margin-bottom: 12px;
-  text-decoration: none;
-  color: #000000;
+
+.lds-ring {
   display: inline-block;
   position: relative;
-  overflow: hidden;
-  /*transition: transform 400ms;*/
-  /*cursor: pointer;*/
-  animation: chargement-boutons-pages-restaurants 750ms forwards;
-  opacity: 0;
+  width: 80px;
+  height: 80px;
 }
-@media screen and (min-width: 1020px) {
-  .boutons-pages-restaurants__bouton {
-    width: 100%;
-  }
-}
-.boutons-pages-restaurants h3 {
-  font-size: 1.1em;
-  padding-top: 8px;
-  padding-left: 8px;
-  margin: 0;
-}
-.boutons-pages-restaurants__informations {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-}
-.boutons-pages-restaurants p {
-  font-size: 0.9em;
-  margin: 0;
-  padding-top: 2px;
-  padding-left: 8px;
-  padding-bottom: 8px;
-}
-.boutons-pages-restaurants p:nth-child(1) {
-  /*width: 290px;
-  height: 10px;
-  overflow: hidden;*/
-  white-space: nowrap;
-  overflow: hidden; /* j'ai trouvé cette technique ici : https://www.digitalocean.com/community/tutorials/css-prevent-line-break-fr */
-  text-overflow: ellipsis;
-}
-.boutons-pages-restaurants__prix {
-  font-weight: 700;
-  padding-right: 20px;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-}
-.boutons-pages-restaurants__prix:hover {
-  /*padding-right: 30px;*/
-  /*transition-duration: 800ms;
-  transition-timing-function: ease;*/
-}
-.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__remplissage-droite {
-  opacity: 1;
-  right: 0;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-}
-.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__prix {
-  margin-right: 60px;
-}
-.boutons-pages-restaurants__remplissage-droite {
-  background-color: #99E2D0;
-  border-radius: 0px 15px 15px 0;
-  width: 55px;
-  height: 57px;
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
   position: absolute;
-  top: 0px;
-  right: -100px;
-  opacity: 0; /* avant d'arriver on ne voit pas sa transparence mais quand le curseur de la souris sort du bouton, on voit un effet de transparence s'appliquer au remplissage un peu après avoir fini de disparaitre, chose assez esthétique, je vais demander au mentor si je l'enlève pour etre parfaitement comme dans la vidéo de l'effet dans la maquette ou si je le laisse */
-  transition-timing-function: ease;
-  transition-duration: 500ms;
-  /* margin-right: -70px;/*
-
-   /*opacity: 0;*/
-  /*transform-origin: 0% 50%;
-  transform: scaleX(0);
-  transition: transform 1000ms;*/
-  display: flex; /* pour l'icone */
-  align-items: center;
-  justify-content: center;
-}
-.boutons-pages-restaurants__icone-remplissage {
-  display: inline-block;
-  color: white;
-  font-size: 1.4em;
-  rotate: 90deg;
-  transition: transform 500ms ease-in-out;
-}
-.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__icone-remplissage {
-  transform: rotate(270deg);
+  width: 64px; /* si je mets par exemple 4px ça crée des points qui dournent */
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2;
+  border-color: #FF79DA transparent transparent;
+  /*border-image: linear-gradient(#9356DC, #FF79DA);*/
+  right: -3000px;
 }
 
-@keyframes chargement-boutons-pages-restaurants {
-  from {
-    opacity: 0;
-    transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
-  }
-  to {
-    opacity: 1;
-    transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
-  }
-}
-/*@keyframes chargement-boutons-pages-restaurants {
-    0% {
-        transform: scaleY(0.5);
-
-    }
-    100% {
-        transform: scaleY(1.0);
-    }
-}*/
-@keyframes bars {
-  0% {
-    transform: scaleY(0.5);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-.boutons-pages-restaurants__bouton_plat {
-  animation-delay: 8s;
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
 }
 
-.boutons-pages-restaurants__bouton--1 {
-  animation-delay: 100ms;
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
 }
 
-.boutons-pages-restaurants__bouton--2 {
-  animation-delay: 200ms;
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
 }
 
-.boutons-pages-restaurants__bouton--3 {
-  animation-delay: 300ms;
-}
-
-.boutons-pages-restaurants__bouton--4 {
-  animation-delay: 400ms;
-}
-
-.boutons-pages-restaurants__bouton--5 {
-  animation-delay: 500ms;
-}
-
-.boutons-pages-restaurants__bouton--6 {
-  animation-delay: 600ms;
-}
-
-.boutons-pages-restaurants__bouton--7 {
-  animation-delay: 700ms;
-}
-
-.boutons-pages-restaurants__bouton--8 {
-  animation-delay: 800ms;
-}
-
-.boutons-pages-restaurants__bouton--9 {
-  animation-delay: 900ms;
-}
-
-.boutons-pages-restaurants__bouton--10 {
-  animation-delay: 1000ms;
-}
-
-#bouton_commander {
-  text-decoration: none;
-  margin: auto;
-  margin-top: 30px;
-  width: 150px;
-  height: 50px;
-  background: linear-gradient(#FF79DA, #9356DC);
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-}
-@media screen and (min-width: 1020px) {
-  #bouton_commander {
-    margin-top: 0;
-  }
-}
-#bouton_commander p {
-  color: #ffffff;
-  font-weight: 500;
-}
-#bouton_commander:hover {
-  opacity: 0.9;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
-}
-
-/* avant il y avait #e6e6e6 */
-/* avant il y avait #f7f7f7 */
-/*$dimension-responsive: (tablette: 768px);
-
-$dimension-responsive: (mobile: 400px); */
-/* @mixin media-queries-mobile {
-    @media screen and (min-width: map-get($dimension-responsive, mobile)){
-        @content;
-    }
-} */
 .formulaire-localisation {
   /*box-shadow: inset 0 7px 9px -7px #000000;*/
   /*box-shadow: inset 0 1px 6px 0px rgba(0,0,0,0.5);*/
@@ -732,321 +488,322 @@ footer i {
   margin-right: 10px;
 }
 
-@keyframes chargement-fond {
-  0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
-    /*position: relative;*/
-    /*display: none;*/
-    right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
-  }
-}
-@keyframes myAnim {
-  0%, 50%, 100% {
-    transform: scaleY(1);
-  }
-  25%, 75% {
-    transform: scaleY(0.2);
-  }
-}
-.page-chargement {
-  position: fixed; /* ça permet de rendre le logo dans la div centré même si je fais défiler la page */
-  background-color: #eaeaea;
+.section_img img {
   width: 100%;
-  height: 100%;
-  animation: chargement-fond 1s linear; /* avanr il y avait 13s avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-  animation-fill-mode: forwards; /* est-ce utile ? */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
+  height: 220px;
+  object-fit: cover;
 }
-.page-chargement__titre-div {
-  padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
+@media screen and (min-width: 1020px) {
+  .section_img img {
+    height: 300px;
+  }
+}
+
+.section-pages-restaurants {
+  background-color: #f6f6f6;
+  padding-bottom: 30px;
+  position: relative;
+  top: -40px;
+  margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
+  border-radius: 40px 40px 0 0;
+  /*border-top: 1px solid $couleur_gris_clair;*/
+}
+@media screen and (min-width: 1020px) {
+  .section-pages-restaurants {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .div-articles-pages-restaurants {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+}
+
+.titre-pages-restaurants {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titre-pages-restaurants h1 {
   font-family: "Shrikhand", cursive;
-  font-size: 3em;
+  font-weight: normal;
+  margin-left: 15px;
+}
+.titre-pages-restaurants__icone-vide {
+  font-size: 1.5em;
+  margin-right: 40px;
+  color: black;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+.titre-pages-restaurants__icone-remplie {
+  font-size: 1.5em;
+  position: absolute;
+  right: 40px;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  color: transparent;
+  background-clip: text;
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /*-webkit-animation: rotate-scale-up 0.65s linear both;
-  animation: rotate-scale-up 0.65s linear both;
-     opacity: 1;*/
-  /*width: 260px; /* oh 53px ; my 134px ; food 260px*/
-  animation: myAnim-2 2s infinite normal forwards; /* j'ai mis "infinite en nombre de répétition pour que ce soit cohérent avec la volonté de créer un loader qui soit adapté à la vitese de connexion de l'utilisateur, donc là dans mon cas, comme le loader n'est pas géré par du javascript, il suffit de déterminer une durée d'affichage pour la div page-chargement et tou les élément à l'intérérieur d'adapteront en durée */
-  position: absolute;
-  opacity: 0;
-  animation-delay: 2.5s;
-  /*span:nth-child(1) {
-      opacity: 0;
-      animation: texte-un 6s;
-  }*/
 }
-.page-chargement__partie-une {
-  animation: myAnim 2s ease 0s 1 normal forwards;
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px; /* si je mets par exemple 4px ça crée des points qui dournent */
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2;
-  border-color: #FF79DA transparent transparent;
-  /*border-image: linear-gradient(#9356DC, #FF79DA);*/
-  right: -3000px;
-}
-
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes lds-ring {
-  0% {
-    right: 0;
-    transform: rotate(0deg);
-  }
-  100% {
-    right: 0;
-    transform: rotate(360deg);
-  }
-}
-@keyframes myAnim-2 {
-  0% {
-    opacity: 1;
-    opacity: 0; /* avant il y avait 1. mettre deux opacity ça fonctionne*/
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.page-chargement__titre {
-  animation: titre-chargement 1s;
+.titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-remplie {
   opacity: 1;
 }
+.titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-vide {
+  opacity: 0;
+}
 
-@keyframes titre-chargement {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
+.articles-pages-restaurants {
+  margin-bottom: 30px;
+}
+.articles-pages-restaurants h2 {
+  font-weight: 300;
+  font-size: 1em;
+  padding-left: 15px;
+  margin: 0;
+  /*text-decoration: underline 3px green;
+  text-underline-offset: 8px;
+  margin-bottom: 20px;*/
+}
+@media screen and (min-width: 1020px) {
+  .articles-pages-restaurants h2 {
+    padding-left: 0;
   }
 }
-@keyframes titre-fondu {
-  0% {
-    width: 53px;
-  }
-  30% {
-    width: 134px;
-  }
-  50% {
-    width: 260px;
+.articles-pages-restaurants .h2_souligne {
+  margin: 5px 0 13px 15px;
+  width: 40px;
+  border-top: 3px solid #99E2D0;
+}
+@media screen and (min-width: 1020px) {
+  .articles-pages-restaurants .h2_souligne {
+    margin-left: 0;
   }
 }
-@keyframes titre-clignotant {
-  /*0% {
-      opacity: 0;
-  }
-  30% {
-      opacity: 1;
-  }
-  50% {
-      opacity: 0;
+
+.boutons-pages-restaurants {
+  display: flex;
+  flex-direction: column;
+  /*&__bouton:hover {
+      transform: scale(1.15);
   }*/
+  /*&__remplissage-droite:hover {
+  /*display: none;*/
+  /* display: flex;
+   transform: scaleX(1);
+   }*/
+}
+@media screen and (min-width: 1020px) {
+  .boutons-pages-restaurants {
+    width: 312px;
+  }
+}
+.boutons-pages-restaurants__bouton {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  width: 90%;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #000000;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  /*transition: transform 400ms;*/
+  /*cursor: pointer;*/
+  animation: chargement-boutons-pages-restaurants 750ms forwards;
+  opacity: 0;
+}
+@media screen and (min-width: 1020px) {
+  .boutons-pages-restaurants__bouton {
+    width: 100%;
+  }
+}
+.boutons-pages-restaurants h3 {
+  font-size: 1.1em;
+  padding-top: 8px;
+  padding-left: 8px;
+  margin: 0;
+}
+.boutons-pages-restaurants__informations {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.boutons-pages-restaurants p {
+  font-size: 0.9em;
+  margin: 0;
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-bottom: 8px;
+}
+.boutons-pages-restaurants p:nth-child(1) {
+  /*width: 290px;
+  height: 10px;
+  overflow: hidden;*/
+  white-space: nowrap;
+  overflow: hidden; /* j'ai trouvé cette technique ici : https://www.digitalocean.com/community/tutorials/css-prevent-line-break-fr */
+  text-overflow: ellipsis;
+}
+.boutons-pages-restaurants__prix {
+  font-weight: 700;
+  padding-right: 20px;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+.boutons-pages-restaurants__prix:hover {
+  /*padding-right: 30px;*/
+  /*transition-duration: 800ms;
+  transition-timing-function: ease;*/
+}
+.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__remplissage-droite {
+  opacity: 1;
+  right: 0;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__prix {
+  margin-right: 60px;
+}
+.boutons-pages-restaurants__remplissage-droite {
+  background-color: #99E2D0;
+  border-radius: 0px 15px 15px 0;
+  width: 55px;
+  height: 57px;
+  position: absolute;
+  top: 0px;
+  right: -100px;
+  opacity: 0; /* avant d'arriver on ne voit pas sa transparence mais quand le curseur de la souris sort du bouton, on voit un effet de transparence s'appliquer au remplissage un peu après avoir fini de disparaitre, chose assez esthétique, je vais demander au mentor si je l'enlève pour etre parfaitement comme dans la vidéo de l'effet dans la maquette ou si je le laisse */
+  transition-timing-function: ease;
+  transition-duration: 500ms;
+  /* margin-right: -70px;/*
+
+   /*opacity: 0;*/
+  /*transform-origin: 0% 50%;
+  transform: scaleX(0);
+  transition: transform 1000ms;*/
+  display: flex; /* pour l'icone */
+  align-items: center;
+  justify-content: center;
+}
+.boutons-pages-restaurants__icone-remplissage {
+  display: inline-block;
+  color: white;
+  font-size: 1.4em;
+  rotate: 90deg;
+  transition: transform 500ms ease-in-out;
+}
+.boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__icone-remplissage {
+  transform: rotate(270deg);
+}
+
+@keyframes chargement-boutons-pages-restaurants {
   from {
-    opacity: 1;
+    opacity: 0;
+    transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
   }
   to {
-    opacity: 0;
+    opacity: 1;
+    transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
   }
 }
-@keyframes titre-fondu-2 {
-  0% {
-    width: 53px;
-  }
-  20% {
-    width: 134px;
-  }
-  40% {
-    width: 260px;
-  }
-  50% {
-    width: 53px;
-  }
-  70% {
-    width: 134px;
-  }
-  90% {
-    width: 260px;
-  }
-}
-/*@keyframes texte-un {
+/*@keyframes chargement-boutons-pages-restaurants {
     0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    75% {
-        opacity: 1;
+        transform: scaleY(0.5);
+
     }
     100% {
-        opacity: 0;
+        transform: scaleY(1.0);
     }
 }*/
-/* .main-page-principale {
-    animation: cards_arrière_plan 7s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes cards_arrière_plan {   C'était un test je peux le supprimer 
-    from {
-        position: relative;
-        right: -3000px;
-    }
-    to {
-        display: flex;       
-    }
-} */
-/* @keyframes cards_arrière_plan {
-    from {
-        position: fixed;
-    }
-    to {
-        position: relative;            C'est pour faire en sorte qu'elles ne se mettent pas au dessus de la div de chargement de la page
-    }
-}
-
-.cards-restaurants__card {
-    animation: cards_arrière_plan 7s;
-    animation-fill-mode: forwards;
-} */
-@-webkit-keyframes rotate-scale-up {
+@keyframes bars {
   0% {
-    -webkit-transform: scale(1) rotateZ(0);
-    transform: scale(1) rotateZ(0);
-  }
-  50% {
-    -webkit-transform: scale(2) rotateZ(180deg);
-    transform: scale(2) rotateZ(180deg);
+    transform: scaleY(0.5);
   }
   100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-    transform: scale(1) rotateZ(360deg);
+    transform: scaleY(1);
   }
 }
-@keyframes rotate-scale-up {
-  0% {
-    -webkit-transform: scale(1) rotateZ(0);
-    transform: scale(1) rotateZ(0);
+.boutons-pages-restaurants__bouton_plat {
+  animation-delay: 8s;
+}
+
+.boutons-pages-restaurants__bouton--1 {
+  animation-delay: 100ms;
+}
+
+.boutons-pages-restaurants__bouton--2 {
+  animation-delay: 200ms;
+}
+
+.boutons-pages-restaurants__bouton--3 {
+  animation-delay: 300ms;
+}
+
+.boutons-pages-restaurants__bouton--4 {
+  animation-delay: 400ms;
+}
+
+.boutons-pages-restaurants__bouton--5 {
+  animation-delay: 500ms;
+}
+
+.boutons-pages-restaurants__bouton--6 {
+  animation-delay: 600ms;
+}
+
+.boutons-pages-restaurants__bouton--7 {
+  animation-delay: 700ms;
+}
+
+.boutons-pages-restaurants__bouton--8 {
+  animation-delay: 800ms;
+}
+
+.boutons-pages-restaurants__bouton--9 {
+  animation-delay: 900ms;
+}
+
+.boutons-pages-restaurants__bouton--10 {
+  animation-delay: 1000ms;
+}
+
+#bouton_commander {
+  text-decoration: none;
+  margin: auto;
+  margin-top: 30px;
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+@media screen and (min-width: 1020px) {
+  #bouton_commander {
+    margin-top: 0;
   }
-  50% {
-    -webkit-transform: scale(2) rotateZ(180deg);
-    transform: scale(2) rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-    transform: scale(1) rotateZ(360deg);
-  }
 }
-/* $couleur_gris_fonce: #e6e6e6;
-$couleur_gris_clair: #f7f7f7;
-$couleur_gris_footer: #1a1a1a;
-$couleur_gris_logo: #737373;
-$couleur_primaire: #9356DC;
-$couleur_secondaire: #FF79DA;
-$couleur_tertiaire: #99E2D0; */
-/*@mixin texte_gras {
-    font-weight: 400;
+#bouton_commander p {
+  color: #ffffff;
+  font-weight: 500;
 }
-
-@mixin ombre-element {
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);       Je les ai ajouté dans le fichier scss mixins
+#bouton_commander:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 }
-
-@mixin degrade-lineaire {
-    background: linear-gradient($couleur_secondaire, $couleur_primaire);
-}*/
-/* @media screen and (min-width: 1024px){
-    #boutons_section_deux {
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        }      
-
-        .bouton_fonctionnement {
-
-            background-color: blue;
-            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
-            width: 90%;
-            border-radius: 20px;
-            height: 65px;
-
-        }
-        .chiffre_bouton_fonctionnement {
-            margin-left: -10px;
-            background-color: $couleur_primaire;
-            padding: 2px 7px;
-            border-radius: 50px;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        #section_trois #cards_section_trois {
-        width: 100%;
-        border: 1px solid black;
-        display: flex;
-        flex-direction: row;
-    }
-    .card_acceuil_restaurants {
-        width: 600px;
-        border: 1px solid black;
-    }
-}
-
-
-@media screen and (min-width: 1440px){
-    main {
-        width: 1400px;
-        margin: auto;
-    }
-    header {
-        width: 100%;
-    }
-} */
 
 /*# sourceMappingURL=style.css.map */
