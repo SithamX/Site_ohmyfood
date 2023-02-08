@@ -147,7 +147,7 @@ $dimension-responsive: (mobile: 400px); */
   /*box-shadow: inset 0 7px 9px -7px #000000;*/
   /*box-shadow: inset 0 1px 6px 0px rgba(0,0,0,0.5);*/
   box-shadow: inset 0 8px 6px -7px rgba(0, 0, 0, 0.2);
-  height: 55px;
+  height: 50px;
   background-color: #eaeaea;
   /*border-top: 1px solid #737373 #f2f2f2;*/
   display: flex;
@@ -157,14 +157,14 @@ $dimension-responsive: (mobile: 400px); */
 }
 .formulaire-localisation__icone {
   margin-right: 10px;
-  color: #262626;
+  color: #4d4d4d;
 }
 .formulaire-localisation__ville {
   border: none;
   background-color: #eaeaea;
-  font-size: 1em;
+  font-size: 0.97em;
   font-weight: 700;
-  color: #262626;
+  color: #4d4d4d;
   width: 140px;
 }
 
@@ -200,7 +200,7 @@ $dimension-responsive: (mobile: 400px); */
   top: 25px;
   margin-left: 30px;
   font-size: 1.3em;
-  color: #000000;
+  color: #404040;
 }
 .header_pages_restaurants img {
   width: 165px;
