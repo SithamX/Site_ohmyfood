@@ -132,8 +132,6 @@
         transform: scale(1.15);
     }*/
     h3 {
-        border: 1px solid black;
-
         font-size: 1.1em;
         padding-top: 8px;
         padding-left: 8px;
@@ -164,7 +162,6 @@
         text-overflow: ellipsis;
     }
     &__prix {
-        border: 1px solid black;
         font-weight: 700;
         padding-right: 20px;
         transition-duration: 300ms;
@@ -185,7 +182,7 @@
         margin-right: 50px;
     }
     &__bouton:hover h3 {
-        margin-right: 60px;
+        margin-right: 35%; /* je mets ça pour que le texte subisse un effet caché avec trois petits points lorsque la partie check à droite est apparente, pour que ça ressemble à ce qui est indiqué sur la maquette, même si ça me parait étonnat que le texte soit caché si tôt, mais c'est sur la maquette */
     }
     &__remplissage-droite {
         background-color: $couleur_tertiaire;
