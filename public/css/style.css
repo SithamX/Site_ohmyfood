@@ -685,34 +685,34 @@ footer i {
   opacity: 0;
 }
 .boutons-pages-restaurants__bouton--1 {
-  animation-delay: 100ms;
+  animation-delay: 100ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--2 {
-  animation-delay: 200ms;
+  animation-delay: 200ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--3 {
-  animation-delay: 300ms;
+  animation-delay: 300ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--4 {
-  animation-delay: 400ms;
+  animation-delay: 400ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--5 {
-  animation-delay: 500ms;
+  animation-delay: 500ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--6 {
-  animation-delay: 600ms;
+  animation-delay: 600ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--7 {
-  animation-delay: 700ms;
+  animation-delay: 700ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--8 {
-  animation-delay: 800ms;
+  animation-delay: 800ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--9 {
-  animation-delay: 900ms;
+  animation-delay: 900ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--10 {
-  animation-delay: 1000ms;
+  animation-delay: 1000ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 @media screen and (min-width: 1024px) {
   .boutons-pages-restaurants__bouton {
@@ -720,10 +720,15 @@ footer i {
   }
 }
 .boutons-pages-restaurants h3 {
+  border: 1px solid black;
   font-size: 1.1em;
   padding-top: 8px;
   padding-left: 8px;
+  padding-right: 15px;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden; /* j'ai trouvé cette technique ici : https://www.digitalocean.com/community/tutorials/css-prevent-line-break-fr */
+  text-overflow: ellipsis;
 }
 .boutons-pages-restaurants__informations {
   display: flex;
@@ -746,6 +751,7 @@ footer i {
   text-overflow: ellipsis;
 }
 .boutons-pages-restaurants__prix {
+  border: 1px solid black;
   font-weight: 700;
   padding-right: 20px;
   transition-duration: 300ms;
@@ -763,6 +769,9 @@ footer i {
   transition-timing-function: ease;
 }
 .boutons-pages-restaurants__bouton:hover .boutons-pages-restaurants__prix {
+  margin-right: 50px;
+}
+.boutons-pages-restaurants__bouton:hover h3 {
   margin-right: 60px;
 }
 .boutons-pages-restaurants__remplissage-droite {
