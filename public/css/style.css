@@ -298,7 +298,7 @@ justify-content: center;*/
   padding-bottom: 50px;
   padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 768px) {
   #section-deux-page-un {
     padding-bottom: 10px;
   }
@@ -307,6 +307,10 @@ justify-content: center;*/
   margin-left: 12px;
   margin-top: 0;
   padding-top: 25px;
+  /*@include media-queries-mobile {
+      display: flex;
+      justify-content: center;
+  }*/
 }
 
 .boutons-fonctionnement__div {
@@ -316,22 +320,28 @@ justify-content: center;*/
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /*@include media-queries-mobile {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 12px;
+      height: auto;
+  }*/
 }
 @media screen and (min-width: 400px) {
   .boutons-fonctionnement__div {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: flex-start;
-    margin-left: 12px;
-    height: auto;
+    margin-left: 20px;
   }
 }
 @media screen and (min-width: 768px) {
   .boutons-fonctionnement__div {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    height: auto;
+    margin-left: 40px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
   }
 }
 .boutons-fonctionnement a {
@@ -344,7 +354,7 @@ justify-content: center;*/
   background-color: #f6f6f6;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 340px;
+  max-width: 320px;
   border-radius: 20px;
   height: 65px;
   transition-duration: 300ms;
@@ -353,15 +363,15 @@ justify-content: center;*/
       margin-right: 50px;
   }*/
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 768px) {
   .boutons-fonctionnement__bouton {
-    margin-right: 40px;
     margin-bottom: 30px;
+    margin-right: 40px;
   }
 }
 @media screen and (min-width: 768px) {
   .boutons-fonctionnement__bouton {
-    width: 350px;
+    width: 330px;
   }
 }
 .boutons-fonctionnement__bouton:hover {
@@ -386,6 +396,9 @@ justify-content: center;*/
 }
 .boutons-fonctionnement__bouton:hover .boutons-fonctionnement__icone {
   color: #9356DC;
+}
+.boutons-fonctionnement h3 {
+  margin-right: 15px;
 }
 
 #section-trois-page-un {
