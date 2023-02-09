@@ -207,26 +207,68 @@ $dimension-responsive: (mobile: 400px); */
   /*border: 1px solid black;*/
 }
 
-#section-une-page-un {
+@media screen and (min-width: 1024px) {
+  #section-deux-page-un {
+    margin: auto;
+    width: 80%;
+    max-width: 1190px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #section-trois-page-un {
+    margin: auto;
+    width: 80%;
+    max-width: 1190px;
+  }
+}
+
+.div-texte-bouton-section-une {
   text-align: center;
   padding-bottom: 50px;
   background-color: #f6f6f6;
 }
-#section-une-page-un h1 {
+@media screen and (min-width: 1024px) {
+  .div-texte-bouton-section-une {
+    margin: auto;
+    width: 80%;
+    max-width: 1190px;
+  }
+}
+.div-texte-bouton-section-une h1 {
   margin: auto; /* pour centrer le texte */
   /*display: flex;
   justify-content: center;*/
-  margin-top: 40px;
+  padding-top: 40px;
   width: 70%;
   padding-bottom: 15px;
 }
-#section-une-page-un p {
+.div-texte-bouton-section-une p {
   margin: auto; /* pour centrer le texte */
   display: flex;
   width: 85%;
   justify-content: center;
 }
 
+/*#section-une-page-un {
+    text-align: center;
+    padding-bottom: 50px;
+    background-color: $couleur_gris_clair;
+    h1 {
+        margin: auto; /* pour centrer le texte */
+/*display: flex;
+justify-content: center;*/
+/*      margin-top: 40px;
+      width: 70%;
+      padding-bottom: 15px;
+  }
+  p {
+      margin: auto; /* pour centrer le texte */
+/*       display: flex;
+        width: 85%;
+        justify-content: center;
+    }
+} */
 #bouton-explorer {
   text-decoration: none;
   margin: auto;
@@ -356,7 +398,15 @@ $dimension-responsive: (mobile: 400px); */
   margin-top: 0;
 }
 
+.cards-restaurants {
+  /*&__card:nth-child(4) {
+      @include media-queries-bureau {
+          width: 92%;
+      }
+  }*/
+}
 .cards-restaurants__div {
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -366,9 +416,7 @@ $dimension-responsive: (mobile: 400px); */
   .cards-restaurants__div {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    height: auto;
+    justify-content: space-evenly;
   }
 }
 .cards-restaurants__card {
@@ -380,17 +428,16 @@ $dimension-responsive: (mobile: 400px); */
   text-decoration: none;
   position: relative;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  /*@include media-queries-tablette-bureau {
+      width: 100%;
+      margin-bottom: 30px;
+  }*/
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 768px) {
   .cards-restaurants__card {
-    width: 450px;
-    margin-right: 40px;
+    /*width: 300px;*/
+    width: 40%;
     margin-bottom: 30px;
-  }
-}
-@media screen and (min-width: 1510px) {
-  .cards-restaurants__card:nth-child(4) {
-    width: 92%;
   }
 }
 .cards-restaurants__image {
@@ -494,7 +541,7 @@ footer i {
   height: 220px;
   object-fit: cover;
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .section_img img {
     height: 300px;
   }
@@ -509,14 +556,14 @@ footer i {
   border-radius: 40px 40px 0 0;
   /*border-top: 1px solid $couleur_gris_clair;*/
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .section-pages-restaurants {
     max-width: 1200px;
     margin: auto;
   }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .div-articles-pages-restaurants {
     display: flex;
     justify-content: space-evenly;
@@ -573,7 +620,7 @@ footer i {
   text-underline-offset: 8px;
   margin-bottom: 20px;*/
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .articles-pages-restaurants h2 {
     padding-left: 0;
   }
@@ -583,7 +630,7 @@ footer i {
   width: 40px;
   border-top: 3px solid #99E2D0;
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .articles-pages-restaurants .h2_souligne {
     margin-left: 0;
   }
@@ -601,7 +648,7 @@ footer i {
    transform: scaleX(1);
    }*/
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .boutons-pages-restaurants {
     width: 312px;
   }
@@ -623,7 +670,7 @@ footer i {
   animation: chargement-boutons-pages-restaurants 750ms forwards;
   opacity: 0;
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .boutons-pages-restaurants__bouton {
     width: 100%;
   }
@@ -793,7 +840,7 @@ footer i {
   transition-duration: 300ms;
   transition-timing-function: ease;
 }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   #bouton_commander {
     margin-top: 0;
   }
