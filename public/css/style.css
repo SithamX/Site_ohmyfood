@@ -680,8 +680,39 @@ footer i {
   overflow: hidden;
   /*transition: transform 400ms;*/
   /*cursor: pointer;*/
-  animation: chargement-boutons-pages-restaurants 750ms forwards;
+  /*animation: chargement-boutons-pages-restaurants 750ms forwards; */
+  animation: chargement-boutons-pages-restaurants 1000ms forwards;
   opacity: 0;
+}
+.boutons-pages-restaurants__bouton--1 {
+  animation-delay: 100ms;
+}
+.boutons-pages-restaurants__bouton--2 {
+  animation-delay: 200ms;
+}
+.boutons-pages-restaurants__bouton--3 {
+  animation-delay: 300ms;
+}
+.boutons-pages-restaurants__bouton--4 {
+  animation-delay: 400ms;
+}
+.boutons-pages-restaurants__bouton--5 {
+  animation-delay: 500ms;
+}
+.boutons-pages-restaurants__bouton--6 {
+  animation-delay: 600ms;
+}
+.boutons-pages-restaurants__bouton--7 {
+  animation-delay: 700ms;
+}
+.boutons-pages-restaurants__bouton--8 {
+  animation-delay: 800ms;
+}
+.boutons-pages-restaurants__bouton--9 {
+  animation-delay: 900ms;
+}
+.boutons-pages-restaurants__bouton--10 {
+  animation-delay: 1000ms;
 }
 @media screen and (min-width: 1024px) {
   .boutons-pages-restaurants__bouton {
@@ -797,46 +828,36 @@ footer i {
   animation-delay: 8s;
 }
 
-.boutons-pages-restaurants__bouton--1 {
-  animation-delay: 100ms;
+/*.boutons-pages-restaurants__bouton--1 {
+    animation-delay: 100ms;
 }
-
 .boutons-pages-restaurants__bouton--2 {
-  animation-delay: 200ms;
+    animation-delay: 200ms;
 }
-
 .boutons-pages-restaurants__bouton--3 {
-  animation-delay: 300ms;
+    animation-delay: 300ms;
 }
-
 .boutons-pages-restaurants__bouton--4 {
-  animation-delay: 400ms;
+    animation-delay: 400ms;
 }
-
 .boutons-pages-restaurants__bouton--5 {
-  animation-delay: 500ms;
+    animation-delay: 500ms;
 }
-
 .boutons-pages-restaurants__bouton--6 {
-  animation-delay: 600ms;
+    animation-delay: 600ms;
 }
-
 .boutons-pages-restaurants__bouton--7 {
-  animation-delay: 700ms;
+    animation-delay: 700ms;
 }
-
 .boutons-pages-restaurants__bouton--8 {
-  animation-delay: 800ms;
+    animation-delay: 800ms;
 }
-
 .boutons-pages-restaurants__bouton--9 {
-  animation-delay: 900ms;
+    animation-delay: 900ms;
 }
-
 .boutons-pages-restaurants__bouton--10 {
-  animation-delay: 1000ms;
-}
-
+    animation-delay: 1000ms;
+} */
 #bouton_commander {
   text-decoration: none;
   margin: auto;

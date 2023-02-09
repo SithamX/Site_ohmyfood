@@ -94,7 +94,8 @@
             margin-left: 0;
         }
     }
-}
+} 
+
 
 .boutons-pages-restaurants {
     display: flex;
@@ -116,7 +117,13 @@
     overflow: hidden;
     /*transition: transform 400ms;*/
     /*cursor: pointer;*/
-    animation: chargement-boutons-pages-restaurants 750ms forwards;
+    /*animation: chargement-boutons-pages-restaurants 750ms forwards; */
+    animation: chargement-boutons-pages-restaurants 1000ms forwards;
+        @for $i from 1 through 10 {
+            &--#{$i} {
+                animation-delay: 1000ms / 10 * $i;
+             }
+        }
     opacity: 0;
     @include media-queries-tablette-bureau {
         width: 100%;
@@ -248,7 +255,7 @@
 }
 
 
-.boutons-pages-restaurants__bouton--1 {
+/*.boutons-pages-restaurants__bouton--1 {
     animation-delay: 100ms;
 }
 .boutons-pages-restaurants__bouton--2 {
@@ -277,7 +284,7 @@
 }
 .boutons-pages-restaurants__bouton--10 {
     animation-delay: 1000ms;
-}
+} */
 
 
 
