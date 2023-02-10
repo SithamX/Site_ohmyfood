@@ -1,28 +1,30 @@
-
 #section-deux-page-un  {
     @include media-queries-tablette-bureau {
-        margin: auto;
+        /*margin: auto;
         width: 80%;
-        max-width: 1190px;
+        max-width: 1190px;*/
+        padding: 0 150px;
     }
 }
 
 #section-trois-page-un {
     @include media-queries-tablette-bureau {
-        margin: auto;
+        /*margin: auto;
         width: 80%;
-        max-width: 1190px;
+        max-width: 1190px;*/
+        padding: 0 150px;
     }
 }
 
-.div-texte-bouton-section-une {
+#section-une-page-un {
     text-align: center;
     padding-bottom: 50px;
     background-color: $couleur_gris_clair;
     @include media-queries-tablette-bureau {
-        margin: auto;
+        /*margin: auto;
         width: 80%;
-        max-width: 1190px;
+        max-width: 1190px;*/
+        /*padding: 0 150px;*/
     }
     h1 {
         margin: auto; /* pour centrer le texte */
@@ -32,11 +34,12 @@
         width: 70%;
         padding-bottom: 15px;
     }
-    p {
+    .paragraphe-texte-section-un {
         margin: auto; /* pour centrer le texte */
         display: flex;
         width: 85%;
         justify-content: center;
+        padding-bottom: 30px;
     }
 }
 
@@ -63,7 +66,7 @@
 #bouton-explorer {
     text-decoration: none;
     margin: auto;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
     width: 230px;
     height: 50px;
     @include degrade-lineaire;
@@ -87,19 +90,23 @@
 
 
 #section-deux-page-un {
-    padding-bottom: 50px;
-    padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */ 
+    border: 1px solid black;
+    padding-bottom: 50px; 
     @include media-queries-tablette {
         padding-bottom: 10px;
     }
     h2 {
-        margin-left: 12px;
+        margin-left: 15px;
         margin-top: 0;
         padding-top: 25px;
         /*@include media-queries-mobile {
             display: flex;
             justify-content: center;
         }*/
+        @include media-queries-tablette-bureau {
+            max-width: 1190px;
+            margin: auto;
+        } 
     }    
 }
 
@@ -113,12 +120,13 @@
 
 .boutons-fonctionnement {
     &__div{
-    /*border: 1px solid black;*/
+    border: 1px solid black;
     height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;  
+    padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
     /*@include media-queries-mobile {
         flex-direction: row;
         flex-wrap: wrap;
@@ -137,7 +145,11 @@
         justify-content: center;
         height: auto;
         margin-left: 40px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
-    }     
+    }   
+    @include media-queries-tablette-bureau {
+        max-width: 1190px;
+        margin: auto;
+    }  
     }
     a {
         text-decoration: none;
@@ -192,8 +204,14 @@
     h3 {
         margin-right: 15px;
     }
-}
+} 
 
+body {
+    @include media-queries-bureau {
+        width: 1500px;
+        margin: auto;
+    }
+}
 
 #section-trois-page-un {
     background-color: $couleur_gris_clair;
@@ -202,12 +220,19 @@
         margin-left: 20px;
         padding-top: 50px; 
         margin-top: 0;
+        @include media-queries-tablette-bureau {
+            margin-left: 0;
+            max-width: 1190px;
+            /*margin: auto;*/
+            padding-right: 30px;
+        }
     }
 }
 
+
 .cards-restaurants {
     &__div {
-        border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -216,6 +241,10 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+    @include media-queries-tablette-bureau {
+        max-width: 1190px;
+        margin: auto;
     }
    
     }

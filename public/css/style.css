@@ -207,35 +207,41 @@ $dimension-responsive: (mobile: 400px); */
   /*border: 1px solid black;*/
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   #section-deux-page-un {
-    margin: auto;
+    /* avant il y avait 1020px */
+    /*margin: auto;
     width: 80%;
-    max-width: 1190px;
+    max-width: 1190px;*/
+    padding: 0 150px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   #section-trois-page-un {
-    margin: auto;
+    /* avant il y avait 1020px */
+    /*margin: auto;
     width: 80%;
-    max-width: 1190px;
+    max-width: 1190px;*/
+    padding: 0 150px;
   }
 }
 
-.div-texte-bouton-section-une {
+#section-une-page-un {
   text-align: center;
   padding-bottom: 50px;
   background-color: #f6f6f6;
 }
-@media screen and (min-width: 1024px) {
-  .div-texte-bouton-section-une {
-    margin: auto;
+@media screen and (min-width: 1300px) {
+  #section-une-page-un {
+    /* avant il y avait 1020px */
+    /*margin: auto;
     width: 80%;
-    max-width: 1190px;
+    max-width: 1190px;*/
+    /*padding: 0 150px;*/
   }
 }
-.div-texte-bouton-section-une h1 {
+#section-une-page-un h1 {
   margin: auto; /* pour centrer le texte */
   /*display: flex;
   justify-content: center;*/
@@ -243,11 +249,12 @@ $dimension-responsive: (mobile: 400px); */
   width: 70%;
   padding-bottom: 15px;
 }
-.div-texte-bouton-section-une p {
+#section-une-page-un .paragraphe-texte-section-un {
   margin: auto; /* pour centrer le texte */
   display: flex;
   width: 85%;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 /*#section-une-page-un {
@@ -272,7 +279,7 @@ justify-content: center;*/
 #bouton-explorer {
   text-decoration: none;
   margin: auto;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
   width: 230px;
   height: 50px;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -295,8 +302,8 @@ justify-content: center;*/
 }
 
 #section-deux-page-un {
+  border: 1px solid black;
   padding-bottom: 50px;
-  padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
 }
 @media screen and (min-width: 768px) {
   #section-deux-page-un {
@@ -304,7 +311,7 @@ justify-content: center;*/
   }
 }
 #section-deux-page-un h2 {
-  margin-left: 12px;
+  margin-left: 15px;
   margin-top: 0;
   padding-top: 25px;
   /*@include media-queries-mobile {
@@ -312,14 +319,22 @@ justify-content: center;*/
       justify-content: center;
   }*/
 }
+@media screen and (min-width: 1300px) {
+  #section-deux-page-un h2 {
+    /* avant il y avait 1020px */
+    max-width: 1190px;
+    margin: auto;
+  }
+}
 
 .boutons-fonctionnement__div {
-  /*border: 1px solid black;*/
+  border: 1px solid black;
   height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
   /*@include media-queries-mobile {
       flex-direction: row;
       flex-wrap: wrap;
@@ -342,6 +357,13 @@ justify-content: center;*/
     justify-content: center;
     height: auto;
     margin-left: 40px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
+  }
+}
+@media screen and (min-width: 1300px) {
+  .boutons-fonctionnement__div {
+    /* avant il y avait 1020px */
+    max-width: 1190px;
+    margin: auto;
   }
 }
 .boutons-fonctionnement a {
@@ -401,6 +423,13 @@ justify-content: center;*/
   margin-right: 15px;
 }
 
+@media screen and (min-width: 1510px) {
+  body {
+    width: 1500px;
+    margin: auto;
+  }
+}
+
 #section-trois-page-un {
   background-color: #f6f6f6;
   padding-bottom: 40px;
@@ -409,6 +438,15 @@ justify-content: center;*/
   margin-left: 20px;
   padding-top: 50px;
   margin-top: 0;
+}
+@media screen and (min-width: 1300px) {
+  #section-trois-page-un h2 {
+    /* avant il y avait 1020px */
+    margin-left: 0;
+    max-width: 1190px;
+    /*margin: auto;*/
+    padding-right: 30px;
+  }
 }
 
 .cards-restaurants {
@@ -419,7 +457,7 @@ justify-content: center;*/
   }*/
 }
 .cards-restaurants__div {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -430,6 +468,13 @@ justify-content: center;*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .cards-restaurants__div {
+    /* avant il y avait 1020px */
+    max-width: 1190px;
+    margin: auto;
   }
 }
 .cards-restaurants__card {
@@ -554,8 +599,9 @@ footer i {
   height: 220px;
   object-fit: cover;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .section_img img {
+    /* avant il y avait 1020px */
     height: 300px;
   }
 }
@@ -569,15 +615,17 @@ footer i {
   border-radius: 40px 40px 0 0;
   /*border-top: 1px solid $couleur_gris_clair;*/
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .section-pages-restaurants {
+    /* avant il y avait 1020px */
     max-width: 1200px;
     margin: auto;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .div-articles-pages-restaurants {
+    /* avant il y avait 1020px */
     display: flex;
     justify-content: space-evenly;
     margin-top: 20px;
@@ -633,8 +681,9 @@ footer i {
   text-underline-offset: 8px;
   margin-bottom: 20px;*/
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .articles-pages-restaurants h2 {
+    /* avant il y avait 1020px */
     padding-left: 0;
   }
 }
@@ -643,8 +692,9 @@ footer i {
   width: 40px;
   border-top: 3px solid #99E2D0;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .articles-pages-restaurants .h2_souligne {
+    /* avant il y avait 1020px */
     margin-left: 0;
   }
 }
@@ -661,8 +711,9 @@ footer i {
    transform: scaleX(1);
    }*/
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .boutons-pages-restaurants {
+    /* avant il y avait 1020px */
     width: 312px;
   }
 }
@@ -714,8 +765,9 @@ footer i {
 .boutons-pages-restaurants__bouton--10 {
   animation-delay: 1000ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .boutons-pages-restaurants__bouton {
+    /* avant il y avait 1020px */
     width: 100%;
   }
 }
@@ -881,8 +933,9 @@ footer i {
   transition-duration: 300ms;
   transition-timing-function: ease;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   #bouton_commander {
+    /* avant il y avait 1020px */
     margin-top: 0;
   }
 }
