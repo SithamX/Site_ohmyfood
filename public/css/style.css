@@ -311,7 +311,8 @@ justify-content: center;*/
   }
 }
 #section-deux-page-un h2 {
-  margin-left: 15px;
+  border: 1px solid black;
+  margin-left: 20px;
   margin-top: 0;
   padding-top: 25px;
   /*@include media-queries-mobile {
@@ -334,7 +335,7 @@ justify-content: center;*/
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-left: 15px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre */
+  margin-left: 20px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre, finalement j'ai changé par un margin-left de 20 px pour que ça soit aligné constamment au titre et qu'il y ait encore un espacement plus important à gauche comme sur la maquette */
   /*@include media-queries-mobile {
       flex-direction: row;
       flex-wrap: wrap;
@@ -431,13 +432,20 @@ justify-content: center;*/
 }
 
 #section-trois-page-un {
+  border: 1px solid black;
   background-color: #f6f6f6;
   padding-bottom: 40px;
 }
 #section-trois-page-un h2 {
+  border: 1px solid black;
   margin-left: 20px;
   padding-top: 50px;
   margin-top: 0;
+}
+@media screen and (min-width: 768px) {
+  #section-trois-page-un h2 {
+    margin-left: 50px;
+  }
 }
 @media screen and (min-width: 1300px) {
   #section-trois-page-un h2 {
@@ -458,16 +466,19 @@ justify-content: center;*/
 }
 .cards-restaurants__div {
   /*border: 1px solid black;*/
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: 0 20px;
 }
 @media screen and (min-width: 768px) {
   .cards-restaurants__div {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 0 50px;
   }
 }
 @media screen and (min-width: 1300px) {
@@ -479,7 +490,7 @@ justify-content: center;*/
 }
 .cards-restaurants__card {
   background-color: #ffffff;
-  width: 90%;
+  width: 100%;
   height: 210px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -494,7 +505,7 @@ justify-content: center;*/
 @media screen and (min-width: 768px) {
   .cards-restaurants__card {
     /*width: 300px;*/
-    width: 40%;
+    width: 46.5%;
     margin-bottom: 30px;
   }
 }
