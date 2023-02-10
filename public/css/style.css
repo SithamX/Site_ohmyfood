@@ -330,6 +330,7 @@ justify-content: center;*/
     /* avant il y avait 1020px */
     max-width: 1190px;
     margin: auto;
+    padding-bottom: 20px; /* commme la margin n'y est plus à cause de la margin: auto; qui centre le titre, je la remplace par un padding-bottom: 20px;  */
   }
 }
 
@@ -467,6 +468,7 @@ justify-content: center;*/
     /*margin: auto;*/
     /*padding-right: 30px;*/
     margin: auto;
+    padding-bottom: 20px; /* commme la margin n'y est plus à cause de la margin: auto; qui centre le titre, je la remplace par un padding-bottom: 20px;  */
   }
 }
 
