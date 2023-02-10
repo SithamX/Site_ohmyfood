@@ -208,31 +208,6 @@ $dimension-responsive: (mobile: 400px); */
 }
 
 @media screen and (min-width: 1300px) {
-  #section-deux-page-un {
-    /* avant il y avait 1020px */
-    /*margin: auto;
-    width: 80%;
-    max-width: 1190px;*/
-    padding: 0 100px;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  #section-trois-page-un {
-    /* avant il y avait 1020px */
-    /*margin: auto;
-    width: 80%;
-    max-width: 1190px;*/
-    padding: 0 100px;
-  }
-}
-
-#section-une-page-un {
-  text-align: center;
-  padding-bottom: 50px;
-  background-color: #f6f6f6;
-}
-@media screen and (min-width: 1300px) {
   #section-une-page-un {
     /* avant il y avait 1020px */
     /*margin: auto;
@@ -255,6 +230,18 @@ $dimension-responsive: (mobile: 400px); */
   width: 85%;
   justify-content: center;
   padding-bottom: 30px;
+}
+
+.div-texte-bouton-section-un {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+}
+@media screen and (min-width: 1510px) {
+  .div-texte-bouton-section-un {
+    max-width: 1500px; /* avant il y avait 1300px mais comme l'écran s'étend à 1500px avant ce media querie c'étaitbizzare de le faire se retrécir donc j'ai bloqué la width à max 1500px plutôt que 1300px */
+    margin: auto;
+  }
 }
 
 /*#section-une-page-un {
@@ -302,7 +289,7 @@ justify-content: center;*/
 }
 
 #section-deux-page-un {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding-bottom: 50px;
 }
 @media screen and (min-width: 768px) {
@@ -310,12 +297,24 @@ justify-content: center;*/
     padding-bottom: 10px;
   }
 }
+@media screen and (min-width: 1300px) {
+  #section-deux-page-un {
+    /* avant il y avait 1020px */
+    padding: 0 100px;
+  }
+}
+@media screen and (min-width: 1510px) {
+  #section-deux-page-un {
+    max-width: 1300px; /* j'ai mis 1300px pour avoir un résultat de 1500px au total (car la section à un padding right et left de 100px à un certain breakpoint) le résultat est vérifiable via l'inspecteur d'élément */
+    margin: auto;
+  }
+}
 #section-deux-page-un h2 {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin-left: 20px;
   margin-top: 0;
+  margin-bottom: 20px;
   padding-top: 25px;
-  padding-bottom: 20px;
   /*@include media-queries-mobile {
       display: flex;
       justify-content: center;
@@ -335,7 +334,7 @@ justify-content: center;*/
 }
 
 .boutons-fonctionnement__div {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -425,23 +424,34 @@ justify-content: center;*/
   margin-right: 15px;
 }
 
-@media screen and (min-width: 1510px) {
-  body {
-    width: 1300px;
-    margin: auto;
-  }
-}
-
+/*body {
+    @include media-queries-bureau {
+        max-width: 1500px; /* avant il y avait 1300px mais comme l'écran s'étend à 1500px avant ce media querie c'étaitbizzare de le faire se retrécir donc j'ai bloqué la width à max 1500px plutôt que 1300px */
+/*  margin: auto;
+    }
+} */
 #section-trois-page-un {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   background-color: #f6f6f6;
   padding-bottom: 40px;
 }
+@media screen and (min-width: 1300px) {
+  #section-trois-page-un {
+    /* avant il y avait 1020px */
+    padding: 0 100px;
+  }
+}
+@media screen and (min-width: 1510px) {
+  #section-trois-page-un {
+    max-width: 1300px; /* j'ai mis 1300px pour avoir un résultat de 1500px au total (car la section à un padding right et left de 100px à un certain breakpoint) le résultat est vérifiable via l'inspecteur d'élément */
+    margin: auto;
+  }
+}
 #section-trois-page-un h2 {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin-left: 20px;
+  margin-bottom: 20px;
   padding-top: 50px;
-  padding-bottom: 20px;
   margin-top: 0;
 }
 @media screen and (min-width: 768px) {
@@ -469,7 +479,6 @@ justify-content: center;*/
 }
 .cards-restaurants__div {
   /*border: 1px solid black;*/
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
