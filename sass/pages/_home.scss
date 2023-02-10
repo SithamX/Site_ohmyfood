@@ -126,8 +126,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;  
-    margin-left: 20px; /* c'est pour créer un espacement plus important à gauche des boutons comme sur la  maquette (j'aurai pu reduire le pourcentages des boutons à 85% et mettre une margin-left de 20px - et c'est ce que j'avais fait - mais mettre un padding-left à la section est plus lisible et simple à relire et à comprendre, finalement j'ai changé par un margin-left de 20 px pour que ça soit aligné constamment au titre et qu'il y ait encore un espacement plus important à gauche comme sur la maquette */
+    padding-left: 10px;  /* c'est pour que les numéros 1-3 sur les boutons ne soient pas hors de la div main bien alignés verticalement avec le titre de la section (ce qui crée un espace plus iportant à gauche qu'à droite comme cela est représenté sur la maquette */
+    margin: 0 20px; /* c'est pour avoir la même configuration que les cards plus bas */
     /*@include media-queries-mobile {
         flex-direction: row;
         flex-wrap: wrap;
@@ -136,10 +136,6 @@
         margin-left: 12px;
         height: auto;
     }*/
-    @include media-queries-mobile {
-        align-items: flex-start;
-        margin-left: 20px;
-    }
     @include media-queries-tablette {
         flex-direction: row;
         flex-wrap: wrap;
@@ -161,7 +157,7 @@
         align-items: center;
         background-color: $couleur_gris_clair;
         @include ombre-element;
-        width: 90%;
+        width: 100%;
         max-width: 320px; 
         border-radius: 20px;
         height: 65px;
