@@ -213,7 +213,7 @@ $dimension-responsive: (mobile: 400px); */
     /*margin: auto;
     width: 80%;
     max-width: 1190px;*/
-    padding: 0 150px;
+    padding: 0 100px;
   }
 }
 
@@ -223,7 +223,7 @@ $dimension-responsive: (mobile: 400px); */
     /*margin: auto;
     width: 80%;
     max-width: 1190px;*/
-    padding: 0 150px;
+    padding: 0 100px;
   }
 }
 
@@ -315,10 +315,16 @@ justify-content: center;*/
   margin-left: 20px;
   margin-top: 0;
   padding-top: 25px;
+  padding-bottom: 20px;
   /*@include media-queries-mobile {
       display: flex;
       justify-content: center;
   }*/
+}
+@media screen and (min-width: 768px) {
+  #section-deux-page-un h2 {
+    margin-left: 50px;
+  }
 }
 @media screen and (min-width: 1300px) {
   #section-deux-page-un h2 {
@@ -351,7 +357,7 @@ justify-content: center;*/
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
-    margin-left: 40px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
+    margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
   }
 }
 @media screen and (min-width: 1300px) {
@@ -359,6 +365,7 @@ justify-content: center;*/
     /* avant il y avait 1020px */
     max-width: 1190px;
     margin: auto;
+    padding-left: 0; /* il est désormais inutile à cette dimension d'écran et c'est pour éviter qu'un décalage se crée entre la longeur de cette div et des autre (titre de la section et titre et div de la section restaurants, c'était visible en mettant à tout un border: 1px solid black; et en arrivant à une certaine dimension de l'écran grâce au testeur de responsive de l'inspecteur d'éléments */
   }
 }
 .boutons-fonctionnement a {
@@ -420,7 +427,7 @@ justify-content: center;*/
 
 @media screen and (min-width: 1510px) {
   body {
-    width: 1500px;
+    width: 1300px;
     margin: auto;
   }
 }
@@ -434,6 +441,7 @@ justify-content: center;*/
   border: 1px solid black;
   margin-left: 20px;
   padding-top: 50px;
+  padding-bottom: 20px;
   margin-top: 0;
 }
 @media screen and (min-width: 768px) {
@@ -444,10 +452,11 @@ justify-content: center;*/
 @media screen and (min-width: 1300px) {
   #section-trois-page-un h2 {
     /* avant il y avait 1020px */
-    margin-left: 0;
+    /*margin-left: 0;*/
     max-width: 1190px;
     /*margin: auto;*/
-    padding-right: 30px;
+    /*padding-right: 30px;*/
+    margin: auto;
   }
 }
 

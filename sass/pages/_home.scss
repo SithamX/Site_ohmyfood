@@ -3,7 +3,7 @@
         /*margin: auto;
         width: 80%;
         max-width: 1190px;*/
-        padding: 0 150px;
+        padding: 0 100px;
     }
 }
 
@@ -12,7 +12,7 @@
         /*margin: auto;
         width: 80%;
         max-width: 1190px;*/
-        padding: 0 150px;
+        padding: 0 100px;
     }
 }
 
@@ -100,10 +100,14 @@
         margin-left: 20px;
         margin-top: 0;
         padding-top: 25px;
+        padding-bottom: 20px;
         /*@include media-queries-mobile {
             display: flex;
             justify-content: center;
         }*/
+        @include media-queries-tablette {
+            margin-left: 50px;
+        } 
         @include media-queries-tablette-bureau {
             max-width: 1190px;
             margin: auto;
@@ -141,11 +145,12 @@
         flex-wrap: wrap;
         justify-content: center;
         height: auto;
-        margin-left: 40px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
+        margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
     }   
     @include media-queries-tablette-bureau {
         max-width: 1190px;
         margin: auto;
+        padding-left: 0; /* il est désormais inutile à cette dimension d'écran et c'est pour éviter qu'un décalage se crée entre la longeur de cette div et des autre (titre de la section et titre et div de la section restaurants, c'était visible en mettant à tout un border: 1px solid black; et en arrivant à une certaine dimension de l'écran grâce au testeur de responsive de l'inspecteur d'éléments */
     }  
     }
     a {
@@ -205,7 +210,7 @@
 
 body {
     @include media-queries-bureau {
-        width: 1500px;
+        width: 1300px;
         margin: auto;
     }
 }
@@ -218,15 +223,17 @@ body {
         border: 1px solid black;
         margin-left: 20px;
         padding-top: 50px; 
+        padding-bottom: 20px;
         margin-top: 0;
         @include media-queries-tablette {
             margin-left: 50px;
         }
         @include media-queries-tablette-bureau {
-            margin-left: 0;
+            /*margin-left: 0;*/
             max-width: 1190px;
             /*margin: auto;*/
-            padding-right: 30px;
+            /*padding-right: 30px;*/
+            margin: auto;
         }
     }
 }
