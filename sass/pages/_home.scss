@@ -80,6 +80,7 @@
 
 #section-deux-page-un {
     /*border: 1px solid black;*/
+    border: 1px solid black;
     padding-bottom: 50px; 
     @include media-queries-tablette {
         padding-bottom: 10px;
@@ -93,6 +94,7 @@
     }
     h2 {
         /*border: 1px solid black;*/
+        border: 1px solid black;
         margin-left: 20px;
         margin-top: 0;
         margin-bottom: 20px;
@@ -122,7 +124,7 @@
 
 .boutons-fonctionnement {
     &__div{
-    /*border: 1px solid black;*/
+    border: 1px solid black;
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -144,10 +146,13 @@
         height: auto;
         margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
     }   
+    @media screen and (min-width: 1160px){ 
+        justify-content: flex-start;
+    }
     @include media-queries-tablette-bureau {
         max-width: 1190px;
         margin: auto;
-        padding-left: 0; /* il est désormais inutile à cette dimension d'écran et c'est pour éviter qu'un décalage se crée entre la longeur de cette div et des autre (titre de la section et titre et div de la section restaurants, c'était visible en mettant à tout un border: 1px solid black; et en arrivant à une certaine dimension de l'écran grâce au testeur de responsive de l'inspecteur d'éléments */
+        padding: 0;/* il est désormais inutile à cette dimension d'écran et c'est pour éviter qu'un décalage se crée entre la longeur de cette div et des autres (titre de la section et titre et div de la section restaurants, c'était visible en mettant à tout un border: 1px solid black; et en arrivant à une certaine dimension de l'écran grâce au testeur de responsive de l'inspecteur d'éléments */
     }  
     }
     a {
@@ -204,6 +209,15 @@
         margin-right: 15px;
     }
 } 
+
+.div-section-deux-page-un-centrage-boutons {
+    border: 1px solid black;
+    @include media-queries-tablette-bureau {
+        max-width: 1180px;
+        margin: auto;
+        padding-left: 10px;
+    }
+}
 
 /*body {
     @include media-queries-bureau {
