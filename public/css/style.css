@@ -290,7 +290,7 @@ justify-content: center;*/
 
 #section-deux-page-un {
   /*border: 1px solid black;*/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding-bottom: 50px;
 }
 @media screen and (min-width: 768px) {
@@ -312,7 +312,7 @@ justify-content: center;*/
 }
 #section-deux-page-un h2 {
   /*border: 1px solid black;*/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin-left: 20px;
   margin-top: 0;
   margin-bottom: 20px;
@@ -336,8 +336,20 @@ justify-content: center;*/
   }
 }
 
+.div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
+  /*border: 1px solid black;*/
+}
+@media screen and (min-width: 1300px) {
+  .div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
+    /* avant il y avait 1020px */
+    max-width: 1180px;
+    margin: auto;
+    padding-left: 10px;
+  }
+}
+
 .boutons-fonctionnement__div {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -355,11 +367,15 @@ justify-content: center;*/
 }
 @media screen and (min-width: 768px) {
   .boutons-fonctionnement__div {
+    height: auto;
+    margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
+  }
+}
+@media screen and (min-width: 800px) {
+  .boutons-fonctionnement__div { /* si je mets ça sur le media queries précedent (pour tablette), ça n'ira pas, car ça centrera le tout en colonne sur la page plutôt que d'en mettre deux en haut et un en bas et centrer le tout, alord qu'à 800px il y à assez de place */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    height: auto;
-    margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
   }
 }
 @media screen and (min-width: 1160px) {
@@ -430,18 +446,6 @@ justify-content: center;*/
 }
 .boutons-fonctionnement h3 {
   margin-right: 15px;
-}
-
-.div-section-deux-page-un-centrage-boutons {
-  border: 1px solid black;
-}
-@media screen and (min-width: 1300px) {
-  .div-section-deux-page-un-centrage-boutons {
-    /* avant il y avait 1020px */
-    max-width: 1180px;
-    margin: auto;
-    padding-left: 10px;
-  }
 }
 
 /*body {

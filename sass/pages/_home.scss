@@ -80,7 +80,7 @@
 
 #section-deux-page-un {
     /*border: 1px solid black;*/
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding-bottom: 50px; 
     @include media-queries-tablette {
         padding-bottom: 10px;
@@ -94,7 +94,7 @@
     }
     h2 {
         /*border: 1px solid black;*/
-        border: 1px solid black;
+        /*border: 1px solid black;*/
         margin-left: 20px;
         margin-top: 0;
         margin-bottom: 20px;
@@ -122,9 +122,18 @@
      }
 }
 
+.div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
+    /*border: 1px solid black;*/
+    @include media-queries-tablette-bureau {
+        max-width: 1180px;
+        margin: auto;
+        padding-left: 10px;
+    }
+}
+
 .boutons-fonctionnement {
     &__div{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -140,12 +149,15 @@
         height: auto;
     }*/
     @include media-queries-tablette {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        
         height: auto;
         margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
     }   
+    @media screen and (min-width: 800px){  /* si je mets ça sur le media queries précedent (pour tablette), ça n'ira pas, car ça centrera le tout en colonne sur la page plutôt que d'en mettre deux en haut et un en bas et centrer le tout, alord qu'à 800px il y à assez de place */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     @media screen and (min-width: 1160px){ 
         justify-content: flex-start;
     }
@@ -196,8 +208,7 @@
         font-weight: 500;
         font-size: 0.9rem;
     }
-    &__icone
-    {
+    &__icone {
         color: $couleur_gris_logo;
         margin-left: 30px;
         margin-right: 20px;
@@ -209,15 +220,6 @@
         margin-right: 15px;
     }
 } 
-
-.div-section-deux-page-un-centrage-boutons {
-    border: 1px solid black;
-    @include media-queries-tablette-bureau {
-        max-width: 1180px;
-        margin: auto;
-        padding-left: 10px;
-    }
-}
 
 /*body {
     @include media-queries-bureau {
