@@ -565,7 +565,7 @@ justify-content: center;*/
   top: 1px;
   right: 12px;
   background-color: #99E2D0;
-  color: #278870;
+  color: #009973; /* j'ai troué la couleur grâce à la pipette de paint sur la maquette et j'ai pris une teinte en dessous sur color-picker de W3Schools parce qu'elle me semble mieux correspondre à la maquette */
   font-weight: 500;
   font-size: 0.84em;
   padding: 5px 12px;
@@ -576,6 +576,7 @@ justify-content: center;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 20px; /* c'est pour éviter d'avoir à le mettre sur le &__icone-vide pour qu'il soit à la bonne position, parce que sinon en hover le curseur étant à 20px sur la droite du coeur active le remplissage de l'icone */
   /*i:hover {
       background: linear-gradient($couleur_secondaire, $couleur_primaire);
   }*/
@@ -595,7 +596,6 @@ justify-content: center;*/
 }
 .card-restaurant-informations__icone-vide {
   font-size: 1.5em;
-  margin-right: 20px;
   color: black;
   opacity: 1;
   transition: all 0.3s ease-in;
@@ -738,6 +738,7 @@ footer i {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 40px; /* c'est pour éviter d'avoir à le mettre sur le &__icone-vide pour qu'il soit à la bonne position, parce que sinon en hover le curseur étant à 20px sur la droite du coeur active le remplissage de l'icone */
 }
 .titre-pages-restaurants h1 {
   font-family: "Shrikhand", cursive;
@@ -746,7 +747,6 @@ footer i {
 }
 .titre-pages-restaurants__icone-vide {
   font-size: 1.5em;
-  margin-right: 40px;
   color: black;
   opacity: 1;
   transition: all 0.3s ease-in;

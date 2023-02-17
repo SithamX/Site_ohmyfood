@@ -44,6 +44,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 40px; /* c'est pour éviter d'avoir à le mettre sur le &__icone-vide pour qu'il soit à la bonne position, parce que sinon en hover le curseur étant à 20px sur la droite du coeur active le remplissage de l'icone */ 
     h1 {
         font-family: 'Shrikhand', cursive;
         font-weight: normal;
@@ -51,7 +52,6 @@
     }
     &__icone-vide {
         font-size: 1.5em;
-        margin-right: 40px;
         color: black;
         opacity: 1;
         transition: all 0.3s ease-in;
