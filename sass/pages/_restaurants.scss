@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use 'sass:math'; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i pour l'animation de chargement des boutons */
 
 
 .section_img {
@@ -20,9 +20,15 @@
     margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
     border-radius: 40px 40px 0 0;
     /*border-top: 1px solid $couleur_gris_clair;*/
+    @include media-queries-tablette {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     @include media-queries-tablette-bureau {
         max-width: 1200px;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -99,15 +105,15 @@
 .boutons-pages-restaurants {
     display: flex;
     flex-direction: column;
+    margin: 0 15px;
     @include media-queries-tablette-bureau {
         width: 312px;
     }
     &__bouton {
     background-color: #ffffff;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
-    width: 90%;
+    width: 100%;
     border-radius: 15px;
-    margin: auto;
     margin-bottom: 12px;
     text-decoration: none;
     color: #000000;
@@ -117,10 +123,10 @@
     /*transition: transform 400ms;*/
     /*cursor: pointer;*/
     /*animation: chargement-boutons-pages-restaurants 750ms forwards; */
-    animation: chargement-boutons-pages-restaurants 1000ms forwards;
+    animation: chargement-boutons-pages-restaurants 1200ms forwards;
         @for $i from 1 through 10 {
             &--#{$i} {
-                animation-delay: math.div(1000ms, 10) * $i; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+                animation-delay: math.div(1200ms, 10) * $i; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
              }
         }
     opacity: 0;
@@ -223,16 +229,31 @@
     }*/
 }
 
-@keyframes chargement-boutons-pages-restaurants {
+/*@keyframes chargement-boutons-pages-restaurants {
     from {
         opacity: 0;
         transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
-    }  
+   /* }  
     to {
         opacity: 1;
         transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
+  /*  }
+}  */
+
+
+@keyframes chargement-boutons-pages-restaurants {
+    0% {
+        opacity: 0; 
+    }  
+    20% { /* c'est pour qu'il y ait un moment plus long avant que les boutons apparaissent comme montré dans la maquette animations, mais je ne sais pas si laisser le 0% d'au-dessus est nécessaire */
+        opacity: 0;
+        transform: translatey(17px); /* avant il y avait tranlatey(20px). avant il y avait margin-bottom: 25px; */
     }
-}  
+    100% {
+        opacity: 1;
+        transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
+    }
+} 
 
 
 /*@keyframes chargement-boutons-pages-restaurants {

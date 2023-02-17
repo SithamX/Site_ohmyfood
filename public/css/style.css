@@ -344,7 +344,7 @@ justify-content: center;*/
     /* avant il y avait 1020px */
     max-width: 1180px;
     margin: auto;
-    padding-left: 10px;
+    padding-left: 10px; /* c'est pour récréer un alignement vertical avec le titre et les autres divs de la page d'acceuil , chose visible si je mets un border noir à toutes pour vérifier que lors du responsive tout reste parfaitement aligné à gauche */
   }
 }
 
@@ -372,14 +372,9 @@ justify-content: center;*/
   }
 }
 @media screen and (min-width: 800px) {
-  .boutons-fonctionnement__div { /* si je mets ça sur le media queries précedent (pour tablette), ça n'ira pas, car ça centrera le tout en colonne sur la page plutôt que d'en mettre deux en haut et un en bas et centrer le tout, alord qu'à 800px il y à assez de place */
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 1160px) {
   .boutons-fonctionnement__div {
+    flex-direction: row;
+    /*flex-wrap: wrap; c'est inutile dans la configuration actuelle */
     justify-content: flex-start;
   }
 }
@@ -401,7 +396,7 @@ justify-content: center;*/
   background-color: #f6f6f6;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 320px;
+  max-width: 310px;
   border-radius: 20px;
   height: 65px;
   transition-duration: 300ms;
@@ -409,6 +404,9 @@ justify-content: center;*/
   /*@include media-queries-mobile {
       margin-right: 50px;
   }*/
+  /*@include media-queries-tablette {
+      width: 330px;                           C'est devenu inutile je pense.
+  } */
 }
 @media screen and (min-width: 768px) {
   .boutons-fonctionnement__bouton {
@@ -416,9 +414,9 @@ justify-content: center;*/
     margin-right: 40px;
   }
 }
-@media screen and (min-width: 768px) {
-  .boutons-fonctionnement__bouton {
-    width: 330px;
+@media screen and (min-width: 800px) {
+  .boutons-fonctionnement__bouton:nth-child(3) {
+    margin-right: 30px;
   }
 }
 .boutons-fonctionnement__bouton:hover {
@@ -438,7 +436,7 @@ justify-content: center;*/
 }
 .boutons-fonctionnement__icone {
   color: #737373;
-  margin-left: 30px;
+  margin-left: 20px;
   margin-right: 20px;
 }
 .boutons-fonctionnement__bouton:hover .boutons-fonctionnement__icone {
@@ -446,6 +444,16 @@ justify-content: center;*/
 }
 .boutons-fonctionnement h3 {
   margin-right: 15px;
+}
+@media screen and (min-width: 800px) {
+  .boutons-fonctionnement h3 { /* C'est pour que le texte ne se mette pas en une ligne à des moments différents */
+    max-width: 160px;
+  }
+}
+@media screen and (min-width: 990px) {
+  .boutons-fonctionnement h3 { /* C'est pour que le texte se mette en une ligne au même moment */
+    max-width: 180px;
+  }
 }
 
 /*body {
@@ -642,6 +650,7 @@ footer i {
   margin-right: 10px;
 }
 
+/* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i pour l'animation de chargement des boutons */
 .section_img img {
   width: 100%;
   height: 220px;
@@ -663,11 +672,19 @@ footer i {
   border-radius: 40px 40px 0 0;
   /*border-top: 1px solid $couleur_gris_clair;*/
 }
+@media screen and (min-width: 768px) {
+  .section-pages-restaurants {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media screen and (min-width: 1300px) {
   .section-pages-restaurants {
     /* avant il y avait 1020px */
     max-width: 1200px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -750,6 +767,7 @@ footer i {
 .boutons-pages-restaurants {
   display: flex;
   flex-direction: column;
+  margin: 0 15px;
   /*&__bouton:hover {
       transform: scale(1.15);
   }*/
@@ -768,9 +786,8 @@ footer i {
 .boutons-pages-restaurants__bouton {
   background-color: #ffffff;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 100%;
   border-radius: 15px;
-  margin: auto;
   margin-bottom: 12px;
   text-decoration: none;
   color: #000000;
@@ -780,38 +797,38 @@ footer i {
   /*transition: transform 400ms;*/
   /*cursor: pointer;*/
   /*animation: chargement-boutons-pages-restaurants 750ms forwards; */
-  animation: chargement-boutons-pages-restaurants 1000ms forwards;
+  animation: chargement-boutons-pages-restaurants 1200ms forwards;
   opacity: 0;
 }
 .boutons-pages-restaurants__bouton--1 {
-  animation-delay: 100ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 120ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--2 {
-  animation-delay: 200ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 240ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--3 {
-  animation-delay: 300ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 360ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--4 {
-  animation-delay: 400ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 480ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--5 {
-  animation-delay: 500ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
-}
-.boutons-pages-restaurants__bouton--6 {
   animation-delay: 600ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
+.boutons-pages-restaurants__bouton--6 {
+  animation-delay: 720ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+}
 .boutons-pages-restaurants__bouton--7 {
-  animation-delay: 700ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 840ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--8 {
-  animation-delay: 800ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 960ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--9 {
-  animation-delay: 900ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 1080ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 .boutons-pages-restaurants__bouton--10 {
-  animation-delay: 1000ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
+  animation-delay: 1200ms; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i */
 }
 @media screen and (min-width: 1300px) {
   .boutons-pages-restaurants__bouton {
@@ -904,12 +921,25 @@ footer i {
   transform: rotate(270deg);
 }
 
+/*@keyframes chargement-boutons-pages-restaurants {
+    from {
+        opacity: 0;
+        transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
+/* }  
+ to {
+     opacity: 1;
+     transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
+/*  }
+}  */
 @keyframes chargement-boutons-pages-restaurants {
-  from {
+  0% {
     opacity: 0;
-    transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
   }
-  to {
+  20% { /* c'est pour qu'il y ait un moment plus long avant que les boutons apparaissent comme montré dans la maquette animations, mais je ne sais pas si laisser le 0% d'au-dessus est nécessaire */
+    opacity: 0;
+    transform: translatey(17px); /* avant il y avait tranlatey(20px). avant il y avait margin-bottom: 25px; */
+  }
+  100% {
     opacity: 1;
     transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
   }
