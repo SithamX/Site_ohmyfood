@@ -209,7 +209,7 @@ $dimension-responsive: (mobile: 400px); */
 
 @media screen and (min-width: 1300px) {
   #section-une-page-un {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     /*margin: auto;
     width: 80%;
     max-width: 1190px;*/
@@ -300,7 +300,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   #section-deux-page-un {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     padding: 0 100px;
   }
 }
@@ -329,7 +329,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   #section-deux-page-un h2 {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1190px;
     margin: auto;
     padding-bottom: 20px; /* commme la margin n'y est plus à cause de la margin: auto; qui centre le titre, je la remplace par un padding-bottom: 20px;  */
@@ -341,7 +341,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   .div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1180px;
     margin: auto;
     padding-left: 10px; /* c'est pour récréer un alignement vertical avec le titre et les autres divs de la page d'acceuil , chose visible si je mets un border noir à toutes pour vérifier que lors du responsive tout reste parfaitement aligné à gauche */
@@ -380,7 +380,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   .boutons-fonctionnement__div {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1190px;
     margin: auto;
     padding: 0; /* il est désormais inutile à cette dimension d'écran et c'est pour éviter qu'un décalage se crée entre la longeur de cette div et des autres (titre de la section et titre et div de la section restaurants, c'était visible en mettant à tout un border: 1px solid black; et en arrivant à une certaine dimension de l'écran grâce au testeur de responsive de l'inspecteur d'éléments */
@@ -469,7 +469,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   #section-trois-page-un {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     padding: 0 100px;
   }
 }
@@ -493,7 +493,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   #section-trois-page-un h2 {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     /*margin-left: 0;*/
     max-width: 1190px;
     /*margin: auto;*/
@@ -528,7 +528,7 @@ justify-content: center;*/
 }
 @media screen and (min-width: 1300px) {
   .cards-restaurants__div {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1190px;
     margin: auto;
   }
@@ -658,7 +658,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   .section_img img {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     height: 300px;
   }
 }
@@ -681,7 +681,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   .section-pages-restaurants {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -690,7 +690,7 @@ footer i {
 
 @media screen and (min-width: 1300px) {
   .div-articles-pages-restaurants {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     display: flex;
     justify-content: space-evenly;
     margin-top: 20px;
@@ -748,7 +748,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   .articles-pages-restaurants h2 {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     padding-left: 0;
   }
 }
@@ -759,7 +759,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   .articles-pages-restaurants .h2_souligne {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     margin-left: 0;
   }
 }
@@ -779,7 +779,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   .boutons-pages-restaurants {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     width: 312px;
   }
 }
@@ -832,7 +832,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   .boutons-pages-restaurants__bouton {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     width: 100%;
   }
 }
@@ -1013,7 +1013,7 @@ footer i {
 }
 @media screen and (min-width: 1300px) {
   #bouton_commander {
-    /* avant il y avait 1020px */
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     margin-top: 0;
   }
 }

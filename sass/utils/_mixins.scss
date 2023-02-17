@@ -37,7 +37,7 @@
 }
 
 @mixin media-queries-tablette-bureau {
-    @media screen and (min-width: 1300px){ /* avant il y avait 1020px */
+    @media screen and (min-width: 1300px){ /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
         @content;
     }
 }
