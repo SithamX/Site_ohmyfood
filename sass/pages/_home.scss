@@ -103,9 +103,18 @@
             display: flex;
             justify-content: center;
         }*/
+        @include media-queries-mobile {
+            display: flex;
+            justify-content: center;
+            margin-left: 0;
+        } 
         @include media-queries-tablette {
             margin-left: 50px;
+            margin-right: 50px;
         } 
+        @media screen and (min-width: 800px){ 
+            justify-content: flex-start;
+        }
         @include media-queries-tablette-bureau {
             max-width: 1190px;
             margin: auto;
@@ -148,8 +157,10 @@
         margin-left: 12px;
         height: auto;
     }*/
+    @include media-queries-mobile {
+        align-items: center;
+    } 
     @include media-queries-tablette {
-        
         height: auto;
         margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
     }   
