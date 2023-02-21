@@ -682,6 +682,9 @@ footer li {
 footer li:nth-child(4) {
   border-right: none;
 }
+footer li:hover {
+  text-decoration: underline;
+}
 footer i {
   font-size: 1em;
   margin-right: 10px;
