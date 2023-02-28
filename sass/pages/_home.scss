@@ -99,7 +99,6 @@
 }
 
 .div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
-    /*border: 1px solid black;*/
     @include media-queries-tablette-bureau {
         max-width: 1180px;
         margin: auto;

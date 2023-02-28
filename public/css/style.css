@@ -24,19 +24,8 @@ p {
 
 /* avant il y avait #e6e6e6 */
 /* avant il y avait #f7f7f7 */
-/*$dimension-responsive: (tablette: 768px);
-
-$dimension-responsive: (mobile: 400px); */
 /* avant il y avait #e6e6e6 */
 /* avant il y avait #f7f7f7 */
-/*$dimension-responsive: (tablette: 768px);
-
-$dimension-responsive: (mobile: 400px); */
-/* @mixin media-queries-mobile {
-    @media screen and (min-width: map-get($dimension-responsive, mobile)){
-        @content;
-    }
-} */
 @keyframes page-chargement-fond {
   0% {
     opacity: 1;
@@ -155,7 +144,6 @@ $dimension-responsive: (mobile: 400px); */
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: linear-gradient;
 }
 .formulaire-localisation__icone {
   margin-right: 10px;
@@ -315,9 +303,6 @@ $dimension-responsive: (mobile: 400px); */
   }
 }
 
-.div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
-  /*border: 1px solid black;*/
-}
 @media screen and (min-width: 1300px) {
   .div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
     /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
@@ -662,8 +647,7 @@ footer i {
   }
 }
 @media screen and (min-width: 1300px) {
-  .section-pages-restaurants {
-    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
+  .section-pages-restaurants { /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;

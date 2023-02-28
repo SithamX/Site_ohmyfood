@@ -18,12 +18,6 @@
 
 
 
-/* @mixin media-queries-mobile {
-    @media screen and (min-width: map-get($dimension-responsive, mobile)){
-        @content;
-    }
-} */
-
 @mixin media-queries-mobile {
     @media screen and (min-width: 400px){
         @content;
