@@ -70,7 +70,7 @@
         margin-top: 0;
         margin-bottom: 20px;
         padding-top: 25px;
-        @include media-queries-mobile {
+        @media screen and (min-width: 360px) {
             display: flex;
             justify-content: center;
             margin-left: 0;
@@ -115,9 +115,9 @@
     justify-content: space-between;
     padding-left: 10px;  /* c'est pour que les numéros 1-3 sur les boutons ne soient pas hors de la div main bien alignés verticalement avec le titre de la section (ce qui crée un espace plus iportant à gauche qu'à droite comme cela est représenté sur la maquette */
     margin: 0 20px; /* c'est pour avoir la même configuration que les cards plus bas */
-    @include media-queries-mobile {
+    @media screen and (min-width: 360px){
         align-items: center;
-    } 
+    }
     @include media-queries-tablette {
         height: auto;
         margin-left: 50px; /*c'est pour compenser le décentrage des boutons due à leur margin-right en responsive version tablette tablette et donc les avoir toujours centrés */
