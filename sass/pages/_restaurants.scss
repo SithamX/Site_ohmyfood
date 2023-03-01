@@ -194,11 +194,11 @@
         display: inline-block;
         color: white;
         font-size: 1.4em;
-        rotate: 90deg;
+        transform: rotate(90deg);
         transition: transform 500ms ease-in-out;
     }
     &__bouton:hover &__icone-remplissage {
-         transform: rotate(270deg);
+         transform: rotate(360deg);
     }
 }
 
