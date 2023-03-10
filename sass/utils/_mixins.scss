@@ -12,7 +12,7 @@
     background: linear-gradient($couleur_secondaire, $couleur_primaire);
 }
 
-@mixin boutons_fonctionnement-hover {
+@mixin test-hover {
     background-color: lighten($couleur_primaire, 35%);
 }
 
