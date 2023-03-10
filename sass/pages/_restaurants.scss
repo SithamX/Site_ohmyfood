@@ -46,10 +46,19 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 40px; /* c'est pour éviter d'avoir à le mettre sur le &__icone-vide pour qu'il soit à la bonne position, parce que sinon en hover le curseur étant à 20px sur la droite du coeur active le remplissage de l'icone */ 
+    padding-top: 5px;
+    @include media-queries-tablette-bureau {
+        padding-top: 20px;
+        margin-right: 70px;
+    }
     h1 {
         font-family: 'Shrikhand', cursive;
         font-weight: normal;
         margin-left: 15px;
+        font-size: 1.7em;
+        @include media-queries-tablette-bureau {
+            margin-left: 55px;
+        }
     }
     &__icone-vide {
         font-size: 1.5em;

@@ -186,6 +186,7 @@
     padding-bottom: 40px;
     @include media-queries-tablette-bureau {
         padding: 0 100px;
+        padding-bottom: 40px;
     }
     @include media-queries-bureau {
         max-width: 1300px; /* j'ai mis 1300px pour avoir un résultat de 1500px au total (car la section à un padding right et left de 100px à un certain breakpoint) le résultat est vérifiable via l'inspecteur d'élément */

@@ -402,6 +402,7 @@ p {
   #section-trois-page-un {
     /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     padding: 0 100px;
+    padding-bottom: 40px;
   }
 }
 @media screen and (min-width: 1510px) {
@@ -654,11 +655,26 @@ footer i {
   justify-content: space-between;
   align-items: center;
   margin-right: 40px; /* c'est pour éviter d'avoir à le mettre sur le &__icone-vide pour qu'il soit à la bonne position, parce que sinon en hover le curseur étant à 20px sur la droite du coeur active le remplissage de l'icone */
+  padding-top: 5px;
+}
+@media screen and (min-width: 1300px) {
+  .titre-pages-restaurants {
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
+    padding-top: 20px;
+    margin-right: 70px;
+  }
 }
 .titre-pages-restaurants h1 {
   font-family: "Shrikhand", cursive;
   font-weight: normal;
   margin-left: 15px;
+  font-size: 1.7em;
+}
+@media screen and (min-width: 1300px) {
+  .titre-pages-restaurants h1 {
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
+    margin-left: 55px;
+  }
 }
 .titre-pages-restaurants__icone-vide {
   font-size: 1.5em;
