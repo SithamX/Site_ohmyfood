@@ -7,7 +7,11 @@
     width: 100%;
     height: 100%;
     animation: page-chargement-fond 12s linear; /* avanr il y avait 13s avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
+<<<<<<< HEAD
     animation-fill-mode: forwards;
+=======
+    animation-fill-mode: forwards; /* est-ce utile ? */
+>>>>>>> a6faab5c155b8fc85eab0fca12f8cab06d0aae4a
     display: flex;
     justify-content: center;
     align-items: center;
