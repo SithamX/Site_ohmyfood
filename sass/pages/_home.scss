@@ -90,14 +90,6 @@
     }    
 }
 
-@mixin explorer-couleur-hover($colour: $couleur_primaire){
-    @if ( lightness($colour) < 25% ) {
-        $colour: lighten($colour, 10%);                                /*Je crois que je ne m'en sers nulle part*/
-     }@else{
-        $colour: darken($colour, 10%);
-     }
-}
-
 .div-section-deux-page-un-centrage-gauche-boutons-responsive-max {
     @include media-queries-tablette-bureau {
         max-width: 1180px;
@@ -159,7 +151,7 @@
     } 
     &__bouton:hover {
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-        @include test-hover;
+        @include boutons_fonctionnement-hover;
     }
     &__numéro {
         margin-left: -10px;
@@ -218,22 +210,21 @@
 
 .cards-restaurants {
     &__div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 20px;
-    @include media-queries-tablette {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0 50px;
-    }
-    @include media-queries-tablette-bureau {
-        max-width: 1190px;
-        margin: auto;
-    }
-   
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 20px;
+        @include media-queries-tablette {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 50px;
+        }
+        @include media-queries-tablette-bureau {
+            max-width: 1190px;
+            margin: auto;
+        }
     }
     &__card {
         background-color: #ffffff;

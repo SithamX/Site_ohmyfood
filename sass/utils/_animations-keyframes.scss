@@ -6,7 +6,7 @@
         opacity: 0.9;
     }
     100% {
-        opacity: 0; 
+        opacity: 1; 
         right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
     }   
 } 

@@ -2,61 +2,56 @@
 
 
 .page-chargement {
-    position: fixed; /* ça permet de rendre le logo dans la div centré même si je fais défiler la page */
-    background-color: $couleur_gris_fonce;
-    width: 100%;
-    height: 100%;
-    animation: page-chargement-fond 12s linear; /* avanr il y avait 13s avant il y avait 30s (mais j'ai mis 1s pour ne pas avoir a attendre le chargement de la page lors de modifications pour en voir les résultats */
-    animation-fill-mode: forwards;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
-    &__titre-div {
-        padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
-        font-family: 'Shrikhand', cursive;
-        font-size: 3em;
-        background: linear-gradient(#9356DC, #FF79DA);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: page-chargement-texte 2s infinite normal forwards; /* j'ai mis "infinite en nombre de répétition pour que ce soit cohérent avec la volonté de créer un loader qui soit adapté à la vitese de connexion de l'utilisateur, donc là dans mon cas, comme le loader n'est pas géré par du javascript, il suffit de déterminer une durée d'affichage pour la div page-chargement et tou les élément à l'intérérieur d'adapteront en durée */
-        position: absolute;
-        opacity: 0;
-        animation-delay: 2.5s;
-    }
-    &__partie-une {
-        animation: myAnim 2s ease 0s 1 normal forwards;
-       
-    }
+  position: fixed; /* ça permet de rendre le logo dans la div centré même si je fais défiler la page */
+  background-color: $couleur_gris_fonce;
+  width: 100%;
+  height: 100%;
+  animation: page-chargement-fond 12s linear; 
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* c'est pour le positionner au dessus de tous les autres elements en position absolute tels que les cards */
+  &__cercle-div {
+    display: inline-block;
+    position: relative;  
+    width: 80px;
+    height: 80px;
+  }
+  &__cercle-div div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px; /* si je mets par exemple 4px ça crée des points qui dournent */
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: page-chargement-cerle 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2;
+    border-color: $couleur_secondaire transparent transparent;
+    right: -3000px;
+  }
+  &__texte {
+    padding: 0 10px; /* c'est pour que le d de ohmyfooD ne soit pas un peu coupé, et j'ai mis le padding à droite et gauche pour le texte reste centré sur la page */
+    font-family: 'Shrikhand', cursive;
+    font-size: 3em;
+    background: linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: page-chargement-texte 2s infinite normal forwards; /* j'ai mis "infinite en nombre de répétition pour que ce soit cohérent avec la volonté de créer un loader qui soit adapté à la vitese de connexion de l'utilisateur, donc là dans mon cas, comme le loader n'est pas géré par du javascript, il suffit de déterminer une durée d'affichage pour la div page-chargement et tou les élément à l'intérérieur d'adapteront en durée */
+    position: absolute;
+    opacity: 0;
+    animation-delay: 2.5s;
+  }
 }
 
-.lds-ring {
-  display: inline-block;
-  position: relative;  
-  width: 80px;
-  height: 80px;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px; /* si je mets par exemple 4px ça crée des points qui dournent */
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation: page-chargement-cerle 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2;
-  border-color: $couleur_secondaire transparent transparent;
-  right: -3000px;
-}
-
-.lds-ring div:nth-child(1) {
+.page-chargement__cercle-div div:nth-child(1) {
   animation-delay: -0.45s;
 }
-.lds-ring div:nth-child(2) {
+.page-chargement__cercle-div div:nth-child(2) {
   animation-delay: -0.3s;
 }
-.lds-ring div:nth-child(3) {
+.page-chargement__cercle-div div:nth-child(3) {
   animation-delay: -0.15s;
 }
 
