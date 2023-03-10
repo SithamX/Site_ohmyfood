@@ -695,6 +695,12 @@ footer i {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media screen and (min-width: 1300px) {
+  .titre-pages-restaurants__icone-remplie {
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
+    right: 70px;
+  }
+}
 .titre-pages-restaurants__div-favoris:hover .titre-pages-restaurants__icone-remplie {
   opacity: 1;
 }
