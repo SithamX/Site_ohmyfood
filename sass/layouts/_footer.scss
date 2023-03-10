@@ -1,3 +1,5 @@
+/* FOOTER */
+
 footer {
     background-color: $couleur_gris_footer;
     padding-left: 20px;
@@ -48,6 +50,9 @@ footer {
     }
     li:nth-child(4) {
         border-right: none;
+    }
+    li:hover {
+        text-decoration: underline;
     }
     i {
         font-size: 1em;

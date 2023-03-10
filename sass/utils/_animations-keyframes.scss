@@ -1,4 +1,4 @@
-@keyframes chargement-fond {
+@keyframes page-chargement-fond {
     0% {
         opacity: 1;
     }
@@ -6,14 +6,12 @@
         opacity: 0.9;
     }
     100% {
-        opacity: 0; /*avant il y avait 0.8 je ne sais pas trop pourquoi */
-        /*position: relative;*/
-        /*display: none;*/
+        opacity: 0; 
         right: -3000px; /* je peux aussi mettre visibility: hidden; pour enlever l'affichage de l'écran de chargement puisque juste avec une opacity de 0, il reste en premier plan et bouche les hover des boutons */
     }   
 } 
 
-@keyframes lds-ring {
+@keyframes page-chargement-cerle {
     0% {
       right: 0;
       transform: rotate(0deg);
@@ -25,10 +23,9 @@
 }
   
   
-@keyframes myAnim-2 {
+@keyframes page-chargement-texte {
     0% {
-        opacity: 1;
-        opacity: 0; /* avant il y avait 1. mettre deux opacity ça fonctionne*/
+        opacity: 0;
     }
   
     50% {
@@ -40,4 +37,18 @@
     }
 }
 
+
+@keyframes chargement-boutons-pages-restaurants {
+    0% {
+        opacity: 0; 
+    }  
+    20% { /* c'est pour qu'il y ait un moment plus long avant que les boutons apparaissent comme montré dans la maquette animations, mais je ne sais pas si laisser le 0% d'au-dessus est nécessaire */
+        opacity: 0;
+        transform: translatey(17px);
+    }
+    100% {
+        opacity: 1;
+        transform: translatey(0px); 
+    }
+} 
 

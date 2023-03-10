@@ -1,3 +1,5 @@
+/* PAGES RESTAURANTS */
+
 @use 'sass:math'; /* c'est le terminal sass qui m'a dit d'utiliser ça plutôt que de metttre 1000ms / 10 * $i pour l'animation de chargement des boutons */
 
 
@@ -19,7 +21,6 @@
     top: -40px;
     margin-bottom: -40px; /* c'est pour annuler l'espace qui se crée en bas à cause de la position absolute à -40px en haut de la section */
     border-radius: 40px 40px 0 0;
-    /*border-top: 1px solid $couleur_gris_clair;*/
     @include media-queries-tablette {
         max-width: 800px;
         margin-left: auto;
@@ -85,9 +86,6 @@
         font-size: 1em;
         padding-left: 15px;
         margin: 0;
-        /*text-decoration: underline 3px green;
-        text-underline-offset: 8px;
-        margin-bottom: 20px;*/
         @include media-queries-tablette-bureau {
             padding-left: 0;
         }
@@ -108,21 +106,19 @@
     margin: 0 15px;
     @include media-queries-tablette-bureau {
         width: 312px;
+        margin-left: 0;
     }
     &__bouton {
     background-color: #ffffff;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
     width: 100%;
     border-radius: 15px;
-    margin-bottom: 12px;
+    margin-bottom: 12px;    
     text-decoration: none;
     color: #000000;
     display: inline-block;
     position: relative;
     overflow: hidden;
-    /*transition: transform 400ms;*/
-    /*cursor: pointer;*/
-    /*animation: chargement-boutons-pages-restaurants 750ms forwards; */
     animation: chargement-boutons-pages-restaurants 1200ms forwards;
         @for $i from 1 through 10 {
             &--#{$i} {
@@ -134,9 +130,6 @@
         width: 100%;
     }
     }
-    /*&__bouton:hover {
-        transform: scale(1.15);
-    }*/
     h3 {
         font-size: 1.1em;
         padding-top: 8px;
@@ -160,9 +153,6 @@
         padding-bottom: 8px;
     }
     p:nth-child(1) {
-        /*width: 290px;
-        height: 10px;
-        overflow: hidden;*/
         white-space: nowrap;
         overflow: hidden;     /* j'ai trouvé cette technique ici : https://www.digitalocean.com/community/tutorials/css-prevent-line-break-fr */
         text-overflow: ellipsis;
@@ -172,11 +162,6 @@
         padding-right: 20px;
         transition-duration: 300ms;
         transition-timing-function: ease;
-    }
-    &__prix:hover {
-        /*padding-right: 30px;*/
-        /*transition-duration: 800ms;
-        transition-timing-function: ease;*/
     }
     &__bouton:hover &__remplissage-droite {
         opacity: 1;
@@ -201,13 +186,6 @@
         opacity: 0; /* avant d'arriver on ne voit pas sa transparence mais quand le curseur de la souris sort du bouton, on voit un effet de transparence s'appliquer au remplissage un peu après avoir fini de disparaitre, chose assez esthétique, je vais demander au mentor si je l'enlève pour etre parfaitement comme dans la vidéo de l'effet dans la maquette ou si je le laisse */
         transition-timing-function: ease;
         transition-duration: 500ms;
-       /* margin-right: -70px;/*
-
-        /*opacity: 0;*/
-
-        /*transform-origin: 0% 50%;
-        transform: scaleX(0);
-        transition: transform 1000ms;*/
         display: flex; /* pour l'icone */
         align-items: center;
         justify-content: center;
@@ -216,104 +194,17 @@
         display: inline-block;
         color: white;
         font-size: 1.4em;
-        rotate: 90deg;
+        transform: rotate(90deg);
         transition: transform 500ms ease-in-out;
     }
     &__bouton:hover &__icone-remplissage {
-         transform: rotate(270deg);
-    }
-    /*&__remplissage-droite:hover {
-    /*display: none;*/
-   /* display: flex;
-    transform: scaleX(1);
-    }*/
-}
-
-/*@keyframes chargement-boutons-pages-restaurants {
-    from {
-        opacity: 0;
-        transform: translatey(20px); /* avant il y avait margin-bottom: 25px; */
-   /* }  
-    to {
-        opacity: 1;
-        transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
-  /*  }
-}  */
-
-
-@keyframes chargement-boutons-pages-restaurants {
-    0% {
-        opacity: 0; 
-    }  
-    20% { /* c'est pour qu'il y ait un moment plus long avant que les boutons apparaissent comme montré dans la maquette animations, mais je ne sais pas si laisser le 0% d'au-dessus est nécessaire */
-        opacity: 0;
-        transform: translatey(17px); /* avant il y avait tranlatey(20px). avant il y avait margin-bottom: 25px; */
-    }
-    100% {
-        opacity: 1;
-        transform: translatey(0px); /* avant il y avait margin-bottom: 12px; */
-    }
-} 
-
-
-/*@keyframes chargement-boutons-pages-restaurants {
-    0% {
-        transform: scaleY(0.5);
-        
-    }
-    100% {
-        transform: scaleY(1.0);
-    }
-}*/   
-
-        
-@keyframes bars {
-    0% {
-        transform: scaleY(0.5);
-        
-    }
-    100% {
-        transform: scaleY(1.0);
+         transform: rotate(360deg);
     }
 }
 
 .boutons-pages-restaurants__bouton_plat {
     animation-delay: 8s;
 }
-
-
-/*.boutons-pages-restaurants__bouton--1 {
-    animation-delay: 100ms;
-}
-.boutons-pages-restaurants__bouton--2 {
-    animation-delay: 200ms;
-}
-.boutons-pages-restaurants__bouton--3 {
-    animation-delay: 300ms;
-}
-.boutons-pages-restaurants__bouton--4 {
-    animation-delay: 400ms;
-}
-.boutons-pages-restaurants__bouton--5 {
-    animation-delay: 500ms;
-}
-.boutons-pages-restaurants__bouton--6 {
-    animation-delay: 600ms;
-}
-.boutons-pages-restaurants__bouton--7 {
-    animation-delay: 700ms;
-}
-.boutons-pages-restaurants__bouton--8 {
-    animation-delay: 800ms;
-}
-.boutons-pages-restaurants__bouton--9 {
-    animation-delay: 900ms;
-}
-.boutons-pages-restaurants__bouton--10 {
-    animation-delay: 1000ms;
-} */
-
-
 
 #bouton_commander {
     text-decoration: none;
