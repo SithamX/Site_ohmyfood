@@ -634,7 +634,8 @@ footer i {
   }
 }
 @media screen and (min-width: 1300px) {
-  .section-pages-restaurants { /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
+  .section-pages-restaurants {
+    /* avant il y avait 1020px. je pourrai mettre 1200px mais ça ne change rien (notamment car sur l'inspecteur d'éléments de chrome la dimension d'un ordinateur portable L est de 1440px, donc les 1300px de ce media querie sont dans les clous */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;

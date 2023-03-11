@@ -151,7 +151,7 @@
     } 
     &__bouton:hover {
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
-        @include boutons_fonctionnement-hover;
+        background-color: lighten($couleur_primaire, 35%);
     }
     &__numéro {
         margin-left: -10px;

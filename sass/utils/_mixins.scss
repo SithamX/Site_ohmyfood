@@ -1,8 +1,5 @@
 @import "./variables";
 
-@mixin texte_gras {
-    font-weight: 400;
-}
 
 @mixin ombre-element {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.1);
@@ -10,10 +7,6 @@
 
 @mixin degrade-lineaire {
     background: linear-gradient($couleur_secondaire, $couleur_primaire);
-}
-
-@mixin boutons_fonctionnement-hover {
-    background-color: lighten($couleur_primaire, 35%);
 }
 
 
